@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/cart"
+        />
+
+    <TextView
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:background="@drawable/round_cart"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:id="@+id/co"
+        android:textColor="#ffffff"
+        />
+
+</RelativeLayout>

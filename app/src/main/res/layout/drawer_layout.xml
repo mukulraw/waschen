@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="300dp"
+    android:background="#ffffff"
+    android:clickable="true"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/men"
+                android:src="@drawable/profile" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:src="@drawable/market"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@drawable/dark_shade_1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:orientation="vertical"
+                android:gravity="bottom"
+                >
+
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/men"
+                    android:src="@drawable/white_profile"/>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Person Name"
+                    android:textColor="#ffffff"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:layout_marginStart="18dp"/>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem Ipsum is simply Dummy."
+                    android:textColor="#ffffff"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_marginBottom="18dp"
+                    android:textSize="15sp"
+                    android:layout_marginStart="18dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile"
+            android:textSize="15sp"
+            android:text="Profile"
+            android:drawableStart="@drawable/profile"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modus"
+            android:text="Modus Operandi"
+            android:textSize="15sp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/profile"
+            android:padding="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/service"
+            android:text="Service"
+            android:textSize="15sp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/profile"
+            android:padding="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/history"
+            android:text="History"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/profile"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wallet"
+            android:text="Track"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:drawableStart="@drawable/profile"
+            android:drawablePadding="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rewards"
+            android:text="Wallet"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/profile"
+            android:textSize="15sp"
+
+            android:padding="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            />
+
+        <TextView
+            android:id="@+id/myplan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="18dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/profile"
+            android:padding="10dp"
+            android:text="Subscription"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faqs"
+            android:textSize="15sp"
+            android:drawableStart="@drawable/profile"
+            android:drawablePadding="10dp"
+            android:text="Faqs"
+            android:padding="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contactus"
+            android:text="Contact Us"
+            android:drawableStart="@drawable/profile"
+            android:drawablePadding="10dp"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+
+        <TextView
+            android:id="@+id/setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="18dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/profile"
+            android:padding="10dp"
+            android:text="Setting"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/blog"
+            android:text="Layout"
+            android:textSize="15sp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/profile"
+            android:padding="10dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ef6e65"
+            android:layout_marginBottom="18dp"/>
+
+
+    </LinearLayout>
+</ScrollView>
