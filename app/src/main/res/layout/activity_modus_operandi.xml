@@ -8,15 +8,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
-        android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>
+        android:background="@color/colorPrimary"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@drawable/cdcdcd_kam_stroke"
         android:orientation="horizontal"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp">
 
@@ -45,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -53,19 +62,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="18dp"
                     android:gravity="center"
                     android:padding="2dp"
                     android:text="SCHEDULE "
                     android:textColor="#454343"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginEnd="30dp"
                     android:gravity="center"
                     android:padding="2dp"
                     android:text="A WASH"
@@ -80,8 +88,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="center"
-                android:layout_marginEnd="115dp"
-                android:layout_marginStart="95dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="#807f7f" />
 
             <LinearLayout
@@ -138,7 +146,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@drawable/cdcdcd_kam_stroke"
         android:orientation="horizontal"
         android:layout_marginStart="18dp"
@@ -231,7 +240,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginBottom="10dp"
         android:layout_marginEnd="18dp"
         android:layout_marginStart="18dp"
@@ -307,6 +317,8 @@
                 android:padding="2dp"/>
 
         </LinearLayout>
+
+    </LinearLayout>
 
     </LinearLayout>
 

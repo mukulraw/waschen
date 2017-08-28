@@ -37,12 +37,13 @@ public class BucketFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentManager fragmentManager =((MainActivity) getContext()).getSupportFragmentManager();
-                FragmentTransaction ft = fragmentManager.beginTransaction();
+                fragmentManager.popBackStack();
+                /*FragmentTransaction ft = fragmentManager.beginTransaction();
                 Home fragment = new Home();
                 ft.replace(R.id.replace, fragment);
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
                 ft.addToBackStack(null);
-                ft.commit();
+                ft.commit();*/
 
             }
         });
