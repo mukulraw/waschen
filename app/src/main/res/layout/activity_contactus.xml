@@ -5,260 +5,270 @@
 
 
 
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/toolbar"
-            android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
 
 
-
-        <ScrollView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:src="@drawable/black_water"
+            android:scaleType="centerCrop"
+            />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
 
-    <TextView
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Drop Us Your Query"
-            android:padding="18dp"
-            android:textColor="#000000"/>
+            android:layout_height="?attr/actionBarSize"
+            android:background="#00000000"
+            />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/cdcdcd_white"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            >
-
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Full Name*"
-                android:textColor="#595757"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Mukul Rawat"
-                android:id="@+id/full"
-                android:textColor="#817f7f"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
-                android:background="@drawable/cdcdcd_white"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Email Id*"
-                android:textColor="#535252"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textColor="#7e7a7a"
-                android:background="@drawable/cdcdcd_white"
-                android:id="@+id/eid"
-                android:text="nisha@technobrix.com"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Phone*"
-                android:textColor="#717171"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="7678119291"
-                android:textColor="#747373"
-                android:id="@+id/phone"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                android:background="@drawable/cdcdcd_white"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="Comment*"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="50dp"
-                android:paddingStart="30dp"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                android:id="@+id/contact"
-                android:background="@drawable/cdcdcd_white"/>
+                android:padding="18dp"
+                android:textAllCaps="true"
+                android:text="Drop Us Your Query"
+                android:textColor="#000000" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginEnd="120dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="18dp"
                 android:layout_marginStart="18dp"
-                >
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/cdcdcd_white"
+                android:orientation="vertical">
 
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:padding="5dp"
+                    android:text="Full Name*"
+                    android:textColor="#595757" />
+
+                <EditText
+                    android:id="@+id/full"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:background="@drawable/cdcdcd_white"
+                    android:padding="5dp"
+                    android:text="Mukul Rawat"
+                    android:textColor="#817f7f" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:padding="5dp"
+                    android:text="Email Id*"
+                    android:textColor="#535252" />
+
+                <EditText
+                    android:id="@+id/eid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:background="@drawable/cdcdcd_white"
+                    android:padding="5dp"
+                    android:text="nisha@technobrix.com"
+                    android:textColor="#7e7a7a" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:padding="5dp"
+                    android:text="Phone*"
+                    android:textColor="#717171" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:background="@drawable/cdcdcd_white"
+                    android:padding="5dp"
+                    android:text="7678119291"
+                    android:textColor="#747373" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:padding="10dp"
+                    android:text="Comment*" />
+
+                <EditText
+                    android:id="@+id/contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:background="@drawable/cdcdcd_white"
+                    android:padding="50dp"
+                    android:paddingStart="30dp" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/black_text_round"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="SUBMIT"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:layout_marginStart="18dp"
+                android:padding="18dp"
+                android:text="CONTACT US"
+                android:textColor="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/cdcdcd_white"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#3b3a3a" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="18dp"
+                    android:padding="5dp"
+                    android:paddingStart="18dp"
+                    android:text="Address"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:padding="5dp"
+                    android:paddingStart="18dp"
+                    android:text="xxx, xxx, xxxx" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:padding="5dp"
+                    android:paddingStart="18dp"
+                    android:text="xxxx, xxxxxx, xxxxxxxx" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:padding="5dp"
+                    android:paddingStart="18dp"
+                    android:text="xxxxxxxxxxxxxxxxxxxxxxxx" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/black_text_round"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:text="SUBMIT"
-                    android:textColor="#ffffff" />
+                    android:padding="5dp"
+                    android:paddingStart="18dp"
+                    android:text="Phone No."
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:padding="5dp"
+                    android:paddingStart="18dp"
+                    android:text="xxx, xxx, xxxx" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:paddingStart="18dp"
+                    android:text="Email Id"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginStart="18dp"
+                    android:padding="5dp"
+                    android:paddingStart="18dp"
+                    android:text="xxx, xxx,xxxxx" />
+
+
             </LinearLayout>
         </LinearLayout>
+</ScrollView>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CONTACT US"
-            android:padding="18dp"
-            android:textColor="#000000"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="18dp"
-            android:background="@drawable/cdcdcd_white">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#3b3a3a"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:padding="5dp"
-                android:paddingStart="18dp"
-                android:textColor="#000000"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="18dp"
-                android:text="Address"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                android:padding="5dp"
-                android:paddingStart="18dp"
-                android:text="xxx, xxx, xxxx"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                android:padding="5dp"
-                android:paddingStart="18dp"
-                android:text="xxxx, xxxxxx, xxxxxxxx"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
-                android:padding="5dp"
-                android:paddingStart="18dp"
-                android:text="xxxxxxxxxxxxxxxxxxxxxxxx"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:padding="5dp"
-                android:paddingStart="18dp"
-                android:textColor="#000000"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="18dp"
-                android:text="Phone No."/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                android:padding="5dp"
-                android:paddingStart="18dp"
-                android:text="xxx, xxx, xxxx"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:padding="5dp"
-                android:paddingStart="18dp"
-                android:textColor="#000000"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="18dp"
-                android:text="Email Id"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                android:padding="5dp"
-                android:paddingStart="18dp"
-                android:text="xxx, xxx,xxxxx"/>
-
-
-        </LinearLayout>
 </LinearLayout>
-    </ScrollView>
-
-    </LinearLayout>

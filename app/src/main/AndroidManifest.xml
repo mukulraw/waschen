@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tvs.waschen">
+    package="com.TBX.tvs.waschen">
 
     <application
         android:allowBackup="true"
@@ -9,25 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.tvs.waschen.MainActivity">
+        <activity android:name="com.TBX.tvs.waschen.MainActivity">
+
+        </activity>
+        <activity android:name="com.TBX.tvs.waschen.Splash" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name="com.example.tvs.waschen.Splash" />
-        <activity android:name="com.example.tvs.waschen.GetStarted" />
-        <activity android:name="com.example.tvs.waschen.SignIn" />
-        <activity android:name="com.example.tvs.waschen.CreateAccount" />
-        <activity android:name="com.example.tvs.waschen.Checkout" />
-        <activity android:name="com.example.tvs.waschen.History" />
-        <activity android:name="com.example.tvs.waschen.OrderDetail" />
-        <activity android:name="com.example.tvs.waschen.Profile" />
-        <activity android:name="com.example.tvs.waschen.ModusOperandi" />
-        <activity android:name="com.example.tvs.waschen.Faqs" />
-        <activity android:name="com.example.tvs.waschen.Contactus" />
-        <activity android:name="com.example.tvs.waschen.Subscription"></activity>
+        <activity android:name="com.TBX.tvs.waschen.GetStarted" />
+        <activity android:name="com.TBX.tvs.waschen.SignIn" />
+        <activity android:name="com.TBX.tvs.waschen.CreateAccount" />
+        <activity android:name="com.TBX.tvs.waschen.Checkout" />
+        <activity android:name="com.TBX.tvs.waschen.History" />
+        <activity android:name="com.TBX.tvs.waschen.OrderDetail" />
+        <activity android:name="com.TBX.tvs.waschen.Profile" />
+        <activity android:name="com.TBX.tvs.waschen.ModusOperandi" />
+        <activity android:name="com.TBX.tvs.waschen.Faqs" />
+        <activity android:name="com.TBX.tvs.waschen.Contactus" />
+        <activity android:name="com.TBX.tvs.waschen.Subscription"></activity>
     </application>
 
 </manifest>

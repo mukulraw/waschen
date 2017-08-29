@@ -22,23 +22,24 @@
             android:layout_marginBottom="5dp"
             >
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
                 android:orientation="vertical"
                 android:layout_weight="1"
+                android:background="@drawable/cdcdcd_kam_stroke"
                 android:id="@+id/relative1"
                 >
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:background="@drawable/cdcdcd_kam_stroke"
+                    android:layout_height="80dp"
+                    android:scaleType="center"
                     android:src="@drawable/shirtfirst"
-                    android:padding="40dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
@@ -46,33 +47,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="DRY CLEAN"
+                    android:layout_gravity="center_horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginStart="18dp"
                     android:textColor="#504e4e"
-                    android:paddingStart="25dp"
-                    android:paddingEnd="18dp"
-                    android:layout_marginTop="120dp"
+                    android:layout_alignParentBottom="true"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
                     android:id="@+id/food" />
 
-            </RelativeLayout>
+            </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:orientation="vertical"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:background="@drawable/cdcdcd_kam_stroke"
                 android:id="@+id/relative2"
                 >
 
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="90dp"
                     android:src="@drawable/t_shirt"
-                    android:padding="40dp"
-                    android:background="@drawable/cdcdcd_kam_stroke"
+                    android:scaleType="center"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
@@ -80,14 +83,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tap"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_gravity="center_horizontal"
                     android:gravity="center_horizontal"
                     android:textColor="#504e4e"
-                    android:layout_marginTop="120dp"
+                    android:padding="10dp"
                     />
 
-            </RelativeLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -103,23 +105,24 @@
             android:layout_marginTop="5dp"
             >
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
+                android:orientation="vertical"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/cdcdcd_kam_stroke"
                 android:id="@+id/relative3"
                 >
 
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:padding="20dp"
+                    android:layout_height="90dp"
+                    android:scaleType="center"
                     android:src="@drawable/wash_shirt"
-                    android:background="@drawable/cdcdcd_kam_stroke"
                     android:id="@+id/imageView"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
@@ -127,35 +130,35 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TO PRESS
-WASH + STEAM"
+                    android:text="TO PRESS WASH + STEAM"
                     android:gravity="center_horizontal"
                     android:textColor="#4b4949"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="18dp"
+                    android:padding="10dp"
+                    android:layout_gravity="center_horizontal"
                     android:textSize="12dp"
                     />
 
-            </RelativeLayout>
+            </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
+                android:orientation="vertical"
                 android:layout_marginStart="10dp"
+                android:background="@drawable/cdcdcd_kam_stroke"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:id="@+id/relativ4"
                 >
 
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="90dp"
                     android:src="@drawable/women_coat"
-                    android:padding="35dp"
-                    android:background="@drawable/cdcdcd_kam_stroke"
+                    android:scaleType="center"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
 
@@ -163,15 +166,13 @@ WASH + STEAM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="LEATHER"
+                    android:layout_gravity="center_horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginStart="18dp"
+                    android:padding="10dp"
                     android:textColor="#5e5c5c"
-                    android:paddingStart="25dp"
-                    android:paddingEnd="18dp"
-                    android:layout_marginTop="120dp"
                     />
 
-            </RelativeLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -203,6 +204,7 @@ WASH + STEAM"
                 android:background="#000000"
                 android:padding="18dp"
                 android:textColor="#ffffff"
+                android:textAllCaps="true"
                 android:gravity="center"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
