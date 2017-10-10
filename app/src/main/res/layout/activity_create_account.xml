@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +42,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username"
+            android:hint="Username"
             android:id="@+id/user"
             android:padding="10dp"
             android:paddingStart="20dp"
@@ -54,7 +58,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Emailid"
+            android:hint="Emailid"
             android:padding="10dp"
             android:id="@+id/emailid"
             android:paddingStart="20dp"
@@ -67,9 +71,10 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MobileNo."
+            android:hint="MobileNo."
             android:padding="10dp"
             android:id="@+id/mobileee"
+            android:inputType="phone"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:background="@drawable/black_stroke"
@@ -80,8 +85,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:hint="Password"
             android:padding="10dp"
+            android:inputType="textPassword"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:id="@+id/pwd"
@@ -94,8 +100,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Re Type Password"
+            android:hint="Re Type Password"
             android:padding="10dp"
+            android:inputType="textPassword"
             android:id="@+id/retype"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
@@ -230,7 +237,7 @@ to your Team of Use privacy and Policy"
             android:padding="5dp"/>
 
 
-        <TextView
+        <Button
             android:id="@+id/createaccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -247,3 +254,12 @@ to your Team of Use privacy and Policy"
             android:textSize="20sp" />
     </LinearLayout>
 </ScrollView>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

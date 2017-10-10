@@ -40,7 +40,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="E Mail Id"
+            android:hint="E Mail Id"
+            android:textColorHint="#fff"
             android:padding="10dp"
             android:textColor="#ffffff"
             android:textSize="20sp"
@@ -56,9 +57,10 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:hint="Password"
             android:padding="10dp"
             android:id="@+id/p"
+            android:textColorHint="#fff"
             android:textColor="#ffffff"
             android:textSize="20sp"
             android:background="@drawable/stroke"
@@ -185,6 +187,7 @@
                     android:padding="10dp"
                     android:background="#2196F3"
                     android:gravity="center"
+                    android:id="@+id/facebook"
                     android:drawableStart="@drawable/facebook"
                     android:textColor="#ffffff"
                     android:layout_gravity="center"
@@ -209,6 +212,7 @@
                     android:padding="10dp"
                     android:background="#F44336"
                     android:gravity="center"
+                    android:id="@+id/google"
                     android:layout_gravity="center"
                     />
             </LinearLayout>
@@ -232,4 +236,12 @@
             android:layout_marginEnd="135dp"/>
     </LinearLayout>
     </ScrollView>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
 </RelativeLayout>

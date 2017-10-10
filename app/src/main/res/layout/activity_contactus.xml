@@ -68,7 +68,7 @@
                     android:textColor="#595757" />
 
                 <EditText
-                    android:id="@+id/full"
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
@@ -88,7 +88,7 @@
                     android:textColor="#535252" />
 
                 <EditText
-                    android:id="@+id/eid"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
@@ -128,7 +128,7 @@
                     android:text="Comment*" />
 
                 <EditText
-                    android:id="@+id/contact"
+                    android:id="@+id/comment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
@@ -144,8 +144,8 @@
                     android:orientation="vertical">
 
 
-                    <TextView
-                        android:id="@+id/textView13"
+                    <Button
+                        android:id="@+id/submit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -155,8 +155,8 @@
                         android:layout_marginTop="10dp"
                         android:background="@drawable/black_text_round"
                         android:gravity="center"
-                        android:padding="15dp"
                         android:text="SUBMIT"
+                        android:minHeight="30dp"
                         android:textColor="#ffffff" />
                 </LinearLayout>
             </LinearLayout>
@@ -242,6 +242,7 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:padding="5dp"
+                    android:id="@+id/phone1"
                     android:paddingStart="18dp"
                     android:text="xxx, xxx, xxxx" />
 
@@ -263,6 +264,7 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:padding="5dp"
+                    android:id="@+id/emailid"
                     android:paddingStart="18dp"
                     android:text="xxx, xxx,xxxxx" />
 

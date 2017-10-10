@@ -16,10 +16,10 @@ public class Contactus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactus);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        name = (EditText) findViewById(R.id.full);
+        name = (EditText) findViewById(R.id.name);
         phone = (EditText) findViewById(R.id.phone);
-        email = (EditText) findViewById(R.id.eid);
-        comments = (EditText) findViewById(R.id.contact);
+        email = (EditText) findViewById(R.id.email);
+        comments = (EditText) findViewById(R.id.comment);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitleTextColor(Color.WHITE);
