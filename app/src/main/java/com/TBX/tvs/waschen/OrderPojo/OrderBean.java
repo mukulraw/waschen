@@ -1,4 +1,4 @@
-package com.TBX.tvs.waschen.GetBucketPOJO;
+package com.TBX.tvs.waschen.OrderPojo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -6,28 +6,17 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 
-public class GetBean {
 
-    @SerializedName("message")
-    @Expose
-    private String message;
+public class OrderBean {
     @SerializedName("status")
     @Expose
     private String status;
-    @SerializedName("totalPrice")
+    @SerializedName("message")
     @Expose
-    private String totalPrice;
+    private String message;
     @SerializedName("data")
     @Expose
     private List<Datum> data = null;
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 
     public String getStatus() {
         return status;
@@ -37,12 +26,12 @@ public class GetBean {
         this.status = status;
     }
 
-    public String getTotalPrice() {
-        return totalPrice;
+    public String getMessage() {
+        return message;
     }
 
-    public void setTotalPrice(String totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public List<Datum> getData() {
@@ -52,4 +41,5 @@ public class GetBean {
     public void setData(List<Datum> data) {
         this.data = data;
     }
+
 }

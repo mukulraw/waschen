@@ -37,7 +37,7 @@ public class BucketFragment extends Fragment {
     RecyclerView recyclerView;
     GridLayoutManager manager;
     BucketAdapter adapter;
-    TextView textView;
+    TextView clearcart , addmore ;
     List<Datum> list;
     ProgressBar bar;
     String catId;
@@ -57,8 +57,9 @@ public class BucketFragment extends Fragment {
         adapter = new BucketAdapter(getContext() , list);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
-        textView = (TextView)view.findViewById(R.id.addmore);
-        textView.setOnClickListener(new View.OnClickListener() {
+        addmore = (TextView)view.findViewById(R.id.addmore);
+        clearcart = (TextView)view.findViewById(R.id.clearcart);
+        addmore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -68,9 +69,6 @@ public class BucketFragment extends Fragment {
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
                 ft.addToBackStack(null);
                 ft.commit();*/
-
-
-
 
             }
         });
@@ -184,6 +182,8 @@ public class BucketFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
 
+                    Log.d("kdsg" , "response");
+
                     bar.setVisibility(View.VISIBLE);
                     Bean b = (Bean)context.getApplicationContext();
 
@@ -199,9 +199,12 @@ public class BucketFragment extends Fragment {
                         @Override
                         public void onResponse(Call<AddBean> call, Response<AddBean> response) {
 
-                            Toast.makeText(context, response.body().getBucketCount(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
                             bar.setVisibility(View.GONE);
+
+
+
 
 
                         }
@@ -210,6 +213,8 @@ public class BucketFragment extends Fragment {
                         public void onFailure(Call<AddBean> call, Throwable t) {
 
                             bar.setVisibility(View.GONE);
+
+                            Log.d("hmm" , t.toString());
 
 
                         }

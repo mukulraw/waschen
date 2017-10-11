@@ -1,6 +1,8 @@
 package com.TBX.tvs.waschen;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -21,10 +23,14 @@ public class Splash extends AppCompatActivity {
 
     Timer t;
 
+    SharedPreferences pref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_layout);
+
+        pref = getSharedPreferences("pref" , Context.MODE_PRIVATE);
 
         ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(Splash.this));
 

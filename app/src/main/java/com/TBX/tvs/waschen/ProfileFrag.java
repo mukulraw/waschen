@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,10 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.TBX.tvs.waschen.LoginPOJO.LoginBean;
 import com.TBX.tvs.waschen.ViewProfilePOJO.ViewBean;
-
-import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,44 +22,34 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-public class Profile extends Fragment {
-    Toolbar toolbar;
+/**
+ * Created by tvs on 10/11/2017.
+ */
+
+public class ProfileFrag extends Fragment {
+
     TextView name,mobile,email,address,zip;
 
     ProgressBar bar;
 
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
 
-   /* @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        View view = inflater.inflate(R.layout.activity_profile, container, false);
 
-        setContentView(R.layout.activity_profile);
-        name = (TextView) findViewById(R.id.name);
-        mobile = (TextView) findViewById(R.id.mobile);
-        email = (TextView) findViewById(R.id.email);
-        address = (TextView) findViewById(R.id.address);
-        bar = (ProgressBar) findViewById(R.id.progress);
-        zip = (TextView) findViewById(R.id.zip);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setNavigationIcon(R.drawable.arrow);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
+        name = (TextView) view.findViewById(R.id.name);
+        mobile = (TextView) view.findViewById(R.id.mobile);
+        email = (TextView) view.findViewById(R.id.email);
+        address = (TextView) view.findViewById(R.id.address);
+        bar = (ProgressBar) view.findViewById(R.id.progress);
+        zip = (TextView) view.findViewById(R.id.zip);
 
         bar.setVisibility(View.VISIBLE);
-        Bean b = (Bean)getApplicationContext();
+        Bean b = (Bean) getContext().getApplicationContext();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(b.baseURL)
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -73,17 +59,17 @@ public class Profile extends Fragment {
         allAPIs cr = retrofit.create(allAPIs.class);
         Call<ViewBean> call = cr.view(b.userid);
 
-        Log.d("ret" , b.userid);
+        Log.d("ret", b.userid);
 
         call.enqueue(new Callback<ViewBean>() {
             @Override
             public void onResponse(Call<ViewBean> call, Response<ViewBean> response) {
 
-                Bean b = (Bean)getApplicationContext();
+                Bean b = (Bean) getContext().getApplicationContext();
 
                 Toast.makeText(b, response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
-                Log.d("dsgsdf" , response.body().getData().getUsername());
+                Log.d("dsgsdf", response.body().getData().getUsername());
 
                 name.setText(response.body().getData().getUsername());
                 mobile.setText(response.body().getData().getPhone());
@@ -101,13 +87,17 @@ public class Profile extends Fragment {
                 bar.setVisibility(View.GONE);
 
 
-
             }
         });
 
-
+        return view;
 
     }
-*/
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
 }
+

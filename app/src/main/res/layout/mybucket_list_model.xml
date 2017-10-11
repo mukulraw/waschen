@@ -43,6 +43,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:text="Lorem Ipsum" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -63,7 +64,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:orientation="vertical"
-
                 android:padding="2dp"
                 android:layout_marginEnd="5dp">
 
@@ -96,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:padding="10dp"
+                android:id="@+id/quantity"
                 android:text="0"
                 android:textSize="20sp" />
 
@@ -133,7 +134,7 @@
                 android:layout_marginStart="10dp"
                 android:background="@drawable/black_btn_round"
                 android:gravity="center"
-                android:src="@drawable/minus"
+                android:src="@drawable/plus"
                 android:textColor="#ffffff" />
         </LinearLayout>
 

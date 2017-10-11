@@ -1,25 +1,25 @@
-package com.TBX.tvs.waschen.GetBucketPOJO;
+package com.TBX.tvs.waschen.ClearPOJO;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+public class ClearBean {
 
-public class GetBean {
 
     @SerializedName("message")
     @Expose
     private String message;
     @SerializedName("status")
     @Expose
-    private String status;
-    @SerializedName("totalPrice")
+    private Integer status;
+    @SerializedName("total_price")
     @Expose
-    private String totalPrice;
+    private Integer totalPrice;
     @SerializedName("data")
     @Expose
-    private List<Datum> data = null;
+    private List<Object> data = null;
 
     public String getMessage() {
         return message;
@@ -29,27 +29,29 @@ public class GetBean {
         this.message = message;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public String getTotalPrice() {
+    public Integer getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
+    public void setTotalPrice(Integer totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public List<Datum> getData() {
+    public List<Object> getData() {
         return data;
     }
 
-    public void setData(List<Datum> data) {
+    public void setData(List<Object> data) {
         this.data = data;
     }
+
+
 }

@@ -1,31 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/black_water"
-            android:scaleType="centerCrop"
-            />
-
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#00000000"
-            />
-
-    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -75,7 +54,7 @@
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
                     android:padding="5dp"
-                    android:text="Mukul Rawat"
+                    android:hint="Mukul Rawat"
                     android:textColor="#817f7f" />
 
                 <TextView
@@ -95,7 +74,7 @@
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
                     android:padding="5dp"
-                    android:text="nisha@technobrix.com"
+                    android:hint="nisha@technobrix.com"
                     android:textColor="#7e7a7a" />
 
                 <TextView
@@ -115,7 +94,7 @@
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
                     android:padding="5dp"
-                    android:text="7678119291"
+                    android:hint="7678119291"
                     android:textColor="#747373" />
 
 
@@ -135,7 +114,7 @@
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
                     android:padding="50dp"
-                    android:paddingStart="30dp" />
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -197,14 +176,6 @@
                     android:text="Address"
                     android:textColor="#000000" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginStart="18dp"
-                    android:padding="5dp"
-                    android:paddingStart="18dp"
-                    android:text="xxx, xxx, xxxx" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -212,15 +183,7 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:padding="5dp"
-                    android:paddingStart="18dp"
-                    android:text="xxxx, xxxxxx, xxxxxxxx" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginStart="18dp"
-                    android:padding="5dp"
+                    android:id="@+id/address"
                     android:paddingStart="18dp"
                     android:text="xxxxxxxxxxxxxxxxxxxxxxxx" />
 
@@ -237,12 +200,12 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/phone1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:padding="5dp"
-                    android:id="@+id/phone1"
                     android:paddingStart="18dp"
                     android:text="xxx, xxx, xxxx" />
 
@@ -259,18 +222,27 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/email1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:padding="5dp"
-                    android:id="@+id/emailid"
                     android:paddingStart="18dp"
                     android:text="xxx, xxx,xxxxx" />
 
 
             </LinearLayout>
         </LinearLayout>
-</ScrollView>
 
-</LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>

@@ -4,27 +4,6 @@
     android:layout_height="match_parent">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/black_water"
-            android:scaleType="centerCrop"
-            />
-
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#00000000"
-            />
-
-    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"

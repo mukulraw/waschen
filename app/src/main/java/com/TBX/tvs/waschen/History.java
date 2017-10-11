@@ -20,9 +20,9 @@ public class History extends AppCompatActivity {
         setContentView(R.layout.activity_history);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
         manager = new GridLayoutManager(this ,1);
-        adapter = new HistoryAdapter(this);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(manager);
+       // adapter = new HistoryAdapter(this , l);
+      //  recyclerView.setAdapter(adapter);
+      //  recyclerView.setLayoutManager(manager);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

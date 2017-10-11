@@ -66,54 +66,120 @@ public class CreateAccount extends AppCompatActivity {
                 Bean b = (Bean)getApplicationContext();
 
 
-                bar.setVisibility(View.VISIBLE);
                 String u = user.getText().toString();
                 String e = email.getText().toString();
                 String p = pwd.getText().toString();
                 String ph = phone.getText().toString();
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(b.baseURL)
-                        .addConverterFactory(ScalarsConverterFactory.create())
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
+                String r = retype.getText().toString();
 
-                allAPIs cr = retrofit.create(allAPIs.class);
-                Call<CreateBean> call = cr.create(u , e , p , ph);
-                call.enqueue(new Callback<CreateBean>() {
-                    @Override
-                    public void onResponse(Call<CreateBean> call, Response<CreateBean> response) {
 
-                        if (Objects.equals(response.body().getStatus(), "1")){
 
-                            Log.d("fhs" , "response");
+                if (u.length()>0)
+                {
 
-                            Toast.makeText(CreateAccount.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    if (Utils.isValidMail(e))
+                    {
 
-                            Intent i = new Intent(CreateAccount.this , SignIn.class);
-                            startActivity(i);
+                        if (Utils.isValidMobile(ph))
+                        {
+
+                            if (p.length()>0)
+                            {
+
+                                if (Objects.equals(p, r))
+                                {
+                                    bar.setVisibility(View.VISIBLE);
+
+
+                                    Retrofit retrofit = new Retrofit.Builder()
+                                            .baseUrl(b.baseURL)
+                                            .addConverterFactory(ScalarsConverterFactory.create())
+                                            .addConverterFactory(GsonConverterFactory.create())
+                                            .build();
+
+                                    allAPIs cr = retrofit.create(allAPIs.class);
+                                    Call<CreateBean> call = cr.create(u , e , p , ph);
+                                    call.enqueue(new Callback<CreateBean>() {
+                                        @Override
+                                        public void onResponse(Call<CreateBean> call, Response<CreateBean> response) {
+
+                                            if (Objects.equals(response.body().getStatus(), "1")){
+
+                                                Log.d("fhs" , "response");
+
+                                                if (Objects.equals(response.body().getMessage(), "Registered Successfully"))
+                                                {
+                                                    Toast.makeText(CreateAccount.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                                    Intent i = new Intent(CreateAccount.this , SignIn.class);
+                                                    startActivity(i);
+                                                    finish();
+                                                }
+                                                else
+                                                {
+                                                    Toast.makeText(CreateAccount.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+
+
+                                            }
+                                            else
+                                            {
+                                                Toast.makeText(CreateAccount.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                                bar.setVisibility(View.GONE);
+                                            }
+
+
+
+
+                                        }
+
+
+                                        @Override
+                                        public void onFailure(Call<CreateBean> call, Throwable t) {
+
+                                            bar.setVisibility(View.GONE);
+
+                                            Log.d("bsdkfs" , t.toString());
+
+                                        }
+                                    });
+
+
+                                }
+                                else
+                                {
+                                    Toast.makeText(CreateAccount.this , "Password did not match" , Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                            else
+                            {
+                                Toast.makeText(CreateAccount.this , "Please Enter a Valid Password" , Toast.LENGTH_SHORT).show();
+                            }
+
                         }
                         else
                         {
-                            Toast.makeText(CreateAccount.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
-
-                            bar.setVisibility(View.GONE);
+                            Toast.makeText(CreateAccount.this , "Please Enter a Valid Phone" , Toast.LENGTH_SHORT).show();
                         }
 
-
-
-
+                    }
+                    else
+                    {
+                        Toast.makeText(CreateAccount.this , "Please Enter a Valid Email" , Toast.LENGTH_SHORT).show();
                     }
 
+                }
+                else
+                {
+                    Toast.makeText(CreateAccount.this , "Please Enter a Valid Username" , Toast.LENGTH_SHORT).show();
+                }
 
-                    @Override
-                    public void onFailure(Call<CreateBean> call, Throwable t) {
 
-                        bar.setVisibility(View.GONE);
 
-                        Log.d("bsdkfs" , t.toString());
 
-                    }
-                });
+
             }
         });
 

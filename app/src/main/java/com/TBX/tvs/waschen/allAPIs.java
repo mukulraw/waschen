@@ -2,14 +2,19 @@ package com.TBX.tvs.waschen;
 
 import com.TBX.tvs.waschen.AddBucketPOJO.AddBean;
 import com.TBX.tvs.waschen.CheckoutPOJO.CheckBean;
+import com.TBX.tvs.waschen.ClearPOJO.ClearBean;
+import com.TBX.tvs.waschen.ContactusPOJO.ContactBean;
 import com.TBX.tvs.waschen.CreatePOJO.CreateBean;
 import com.TBX.tvs.waschen.FaqPOJO.FaqBean;
 import com.TBX.tvs.waschen.GetBucketPOJO.GetBean;
 import com.TBX.tvs.waschen.LoginPOJO.LoginBean;
+import com.TBX.tvs.waschen.OrderDetailPOJO.DetailBean;
+import com.TBX.tvs.waschen.OrderPojo.OrderBean;
 import com.TBX.tvs.waschen.RemovePOJO.RemoveBean;
 import com.TBX.tvs.waschen.SProductPOJO.ProductBean;
 import com.TBX.tvs.waschen.ServicesPOJO.ServiceBean;
 import com.TBX.tvs.waschen.SocialPOJO.SocialBean;
+import com.TBX.tvs.waschen.SubmitPOJO.SubmitBean;
 import com.TBX.tvs.waschen.UpdatePOJO.UpdateBean;
 import com.TBX.tvs.waschen.UploadImagePOJO.UploadBean;
 import com.TBX.tvs.waschen.ViewProfilePOJO.ViewBean;
@@ -61,7 +66,7 @@ public interface allAPIs {
 
 
     @Multipart
-    @POST("/waschen_api/add_bucket.php")
+    @POST("waschen_api/add_bucket.php")
     Call<AddBean> add (
             @Part("userId") String id ,
             @Part("productId") String pro ,
@@ -141,8 +146,42 @@ public interface allAPIs {
 
     );
 
+    @Multipart
+    @POST("waschen_api/clear_bucket.php")
+    Call<ClearBean> clear (
+
+    );
+
+    @Multipart
+    @POST("waschen_api/order_history.php")
+    Call<OrderBean> order (
+            @Part("userId") String id
+    );
 
 
+    @Multipart
+    @POST("waschen_api/order_history.php")
+    Call<DetailBean> detail (
+            @Part("userId") String id ,
+            @Part("orderId") String order
+
+    );
+
+
+    @GET("waschen_api/owner_address.php")
+    Call<ContactBean> contact (
+
+    );
+
+    @Multipart
+    @POST("waschen_api/contact_us.php")
+    Call<SubmitBean> submit (
+            @Part("name") String id ,
+            @Part("email") String e ,
+            @Part("phone") String p ,
+            @Part("comment") String c
+
+    );
 
 
 }

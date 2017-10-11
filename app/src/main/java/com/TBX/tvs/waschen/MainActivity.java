@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawer;
-    TextView profile,modus,service,history,contactus,faqs;
+    TextView profile,modus,service,history,contactus,faqs , wallet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         modus = (TextView) findViewById(R.id.modus);
         history = (TextView) findViewById(R.id.history);
         service = (TextView) findViewById(R.id.service);
+        wallet = (TextView) findViewById(R.id.wallet);
         faqs = (TextView) findViewById(R.id.faqs);
         contactus = (TextView) findViewById(R.id.contactus);
         drawer = (DrawerLayout) findViewById(R.id.activity_main);
@@ -52,12 +53,28 @@ public class MainActivity extends AppCompatActivity {
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
         ft.commit();
 
+        if (drawer.isDrawerOpen(GravityCompat.START))
+        {
+            drawer.closeDrawer(GravityCompat.START);
+        }
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this , Profile.class);
-                startActivity(i);
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ProfileFrag fragment = new ProfileFrag();
+                ft.replace(R.id.replace, fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.addToBackStack(null);
+                ft.commit();
+                if (drawer.isDrawerOpen(GravityCompat.START))
+                {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+                toolbar.setTitle("Profile");
+
             }
         });
 
@@ -65,40 +82,113 @@ public class MainActivity extends AppCompatActivity {
         modus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this , ModusOperandi.class);
-                startActivity(i);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ModusOperandiFrag fragment = new ModusOperandiFrag();
+                ft.replace(R.id.replace, fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.addToBackStack(null);
+                ft.commit();
+                if (drawer.isDrawerOpen(GravityCompat.START))
+                {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+                toolbar.setTitle("Modus Operandi");
+
             }
         });
 
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this , History.class);
-                startActivity(i);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                HistoryFrag fragment = new HistoryFrag();
+                ft.replace(R.id.replace, fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.addToBackStack(null);
+                ft.commit();
+                if (drawer.isDrawerOpen(GravityCompat.START))
+                {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+
+                toolbar.setTitle("History");
             }
         });
 
         service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this ,Home.class);
-                startActivity(i);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                Home fragment = new Home();
+                ft.replace(R.id.replace, fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.addToBackStack(null);
+                ft.commit();
+                if (drawer.isDrawerOpen(GravityCompat.START))
+                {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+                toolbar.setTitle("Service");
             }
         });
 
         faqs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this ,Faqs.class);
-                startActivity(i);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                FaqFrag fragment = new FaqFrag();
+                ft.replace(R.id.replace, fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.addToBackStack(null);
+                ft.commit();
+
+                if (drawer.isDrawerOpen(GravityCompat.START))
+                {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+                toolbar.setTitle("Faq");
             }
         });
 
         contactus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this ,Contactus.class);
-                startActivity(i);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ContactFrag fragment = new ContactFrag();
+                ft.replace(R.id.replace, fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.addToBackStack(null);
+                ft.commit();
+                if (drawer.isDrawerOpen(GravityCompat.START))
+                {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+
+                toolbar.setTitle("ContactUs");
+            }
+        });
+
+        wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                Wallet fragment = new Wallet();
+                ft.replace(R.id.replace, fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.addToBackStack(null);
+                ft.commit();
+                if (drawer.isDrawerOpen(GravityCompat.START))
+                {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+
+                toolbar.setTitle("Wallet");
             }
         });
     }

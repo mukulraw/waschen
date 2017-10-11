@@ -31,7 +31,8 @@
         <activity android:name=".Faqs" />
         <activity android:name=".Contactus" />
         <activity android:name=".Subscription" />
-        <activity android:name=".BucketCart"></activity>
+        <activity android:name=".BucketCart" />
+        <activity android:name=".ViewMore"></activity>
     </application>
 
 </manifest>
