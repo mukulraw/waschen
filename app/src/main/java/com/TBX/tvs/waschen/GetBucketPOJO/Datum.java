@@ -6,42 +6,56 @@ import com.google.gson.annotations.SerializedName;
 
 public class Datum {
 
-    @SerializedName("cat_id")
+    @SerializedName("userId")
     @Expose
-    private String catId;
-    @SerializedName("cat_name")
+    private String userId;
+    @SerializedName("category_id")
     @Expose
-    private String catName;
+    private String categoryId;
+    @SerializedName("category_name")
+    @Expose
+    private String categoryName;
     @SerializedName("product_id")
     @Expose
     private String productId;
     @SerializedName("product_name")
     @Expose
     private String productName;
-    @SerializedName("unitPrice")
-    @Expose
-    private String unitPrice;
     @SerializedName("quantity")
     @Expose
     private String quantity;
-    @SerializedName("product_image")
+    @SerializedName("unitprice")
     @Expose
-    private String productImage;
+    private String unitprice;
+    @SerializedName("toprice")
+    @Expose
+    private String toprice;
+    @SerializedName("image")
+    @Expose
+    private String image;
 
-    public String getCatId() {
-        return catId;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setCatId(String catId) {
-        this.catId = catId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getCatName() {
-        return catName;
+    public String getCategoryId() {
+        return categoryId;
     }
 
-    public void setCatName(String catName) {
-        this.catName = catName;
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public String getProductId() {
@@ -60,14 +74,6 @@ public class Datum {
         this.productName = productName;
     }
 
-    public String getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(String unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
     public String getQuantity() {
         return quantity;
     }
@@ -76,11 +82,27 @@ public class Datum {
         this.quantity = quantity;
     }
 
-    public String getProductImage() {
-        return productImage;
+    public String getUnitprice() {
+        return unitprice;
     }
 
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
+    public void setUnitprice(String unitprice) {
+        this.unitprice = unitprice;
+    }
+
+    public String getToprice() {
+        return toprice;
+    }
+
+    public void setToprice(String toprice) {
+        this.toprice = toprice;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

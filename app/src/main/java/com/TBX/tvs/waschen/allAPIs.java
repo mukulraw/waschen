@@ -1,6 +1,7 @@
 package com.TBX.tvs.waschen;
 
 import com.TBX.tvs.waschen.AddBucketPOJO.AddBean;
+import com.TBX.tvs.waschen.BucketCountPOJO.BucketCountBean;
 import com.TBX.tvs.waschen.CheckoutPOJO.CheckBean;
 import com.TBX.tvs.waschen.ClearPOJO.ClearBean;
 import com.TBX.tvs.waschen.ContactusPOJO.ContactBean;
@@ -60,7 +61,8 @@ public interface allAPIs {
     @Multipart
     @POST("waschen_api/get_bucket.php")
     Call<GetBean> get (
-            @Part("userId") String id
+            @Part("userId") String id,
+            @Part("cartid") String cat
 
     );
 
@@ -70,16 +72,18 @@ public interface allAPIs {
     Call<AddBean> add (
             @Part("userId") String id ,
             @Part("productId") String pro ,
-            @Part("quantity") String quan
+            @Part("quantity") String quan ,
+            @Part("price") String price
 
     );
 
     @Multipart
     @POST("waschen_api/product_list.php")
-    Call<UpdateBean> update (
+    Call<AddBean> update (
             @Part("userId") String id ,
             @Part("productId") String pro ,
-            @Part("quantity") String quan
+            @Part("quantity") String quan ,
+            @Part("price") String price
 
     );
 
@@ -167,7 +171,6 @@ public interface allAPIs {
 
     );
 
-
     @GET("waschen_api/owner_address.php")
     Call<ContactBean> contact (
 
@@ -180,8 +183,9 @@ public interface allAPIs {
             @Part("email") String e ,
             @Part("phone") String p ,
             @Part("comment") String c
-
     );
 
+    @GET("waschen_api/delivey_method.php")
+    Call<BucketCountBean> getBucketCount ();
 
 }

@@ -3,10 +3,6 @@ package com.TBX.tvs.waschen;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by tvs on 10/11/2017.
- */
-
 public class Utils {
 
     public static boolean isValidMobile(String phone) {

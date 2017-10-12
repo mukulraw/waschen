@@ -14,12 +14,29 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.TBX.tvs.waschen.BucketCountPOJO.BucketCountBean;
+import com.TBX.tvs.waschen.ServicesPOJO.ServiceBean;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawer;
     TextView profile,modus,service,history,contactus,faqs , wallet;
+
+    ProgressBar bar;
+
+    LinearLayout hide;
+    TextView pickDate , proceed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +48,17 @@ public class MainActivity extends AppCompatActivity {
         history = (TextView) findViewById(R.id.history);
         service = (TextView) findViewById(R.id.service);
         wallet = (TextView) findViewById(R.id.wallet);
+        bar = (ProgressBar) findViewById(R.id.progress);
         faqs = (TextView) findViewById(R.id.faqs);
         contactus = (TextView) findViewById(R.id.contactus);
         drawer = (DrawerLayout) findViewById(R.id.activity_main);
+
+
+        proceed = (TextView) findViewById(R.id.proceed);
+        pickDate = (TextView) findViewById(R.id.pick_date);
+        hide = (LinearLayout) findViewById(R.id.hide);
+
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitleTextColor(Color.WHITE);
@@ -56,7 +81,55 @@ public class MainActivity extends AppCompatActivity {
         if (drawer.isDrawerOpen(GravityCompat.START))
         {
             drawer.closeDrawer(GravityCompat.START);
+
         }
+
+
+        bar.setVisibility(View.VISIBLE);
+
+        Bean b = (Bean)getApplicationContext();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(b.baseURL)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        allAPIs cr = retrofit.create(allAPIs.class);
+        Call<BucketCountBean> call = cr.getBucketCount();
+        call.enqueue(new Callback<BucketCountBean>() {
+            @Override
+            public void onResponse(Call<BucketCountBean> call, Response<BucketCountBean> response) {
+
+
+                int count = response.body().getBucketCount();
+
+
+                if (count > 0)
+                {
+                    hide.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    hide.setVisibility(View.GONE);
+                }
+
+                bar.setVisibility(View.GONE);
+
+            }
+
+            @Override
+            public void onFailure(Call<BucketCountBean> call, Throwable t) {
+                bar.setVisibility(View.GONE);
+            }
+        });
+
+
+
+
+
+
+
+
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override

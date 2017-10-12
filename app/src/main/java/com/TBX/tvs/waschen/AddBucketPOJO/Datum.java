@@ -3,12 +3,10 @@ package com.TBX.tvs.waschen.AddBucketPOJO;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by tvs on 10/8/2017.
- */
 
-public class Data {
+public class Datum {
 
+    @SerializedName("productId")
     @Expose
     private String productId;
     @SerializedName("productName")

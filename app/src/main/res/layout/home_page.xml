@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="3"
-    android:paddingBottom="50dp"
+
     >
 
 
@@ -12,47 +12,57 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+
        <android.support.v7.widget.RecyclerView
            android:layout_width="match_parent"
-           android:layout_height="300dp"
-           android:id="@+id/recycler">
-       </android.support.v7.widget.RecyclerView>
+           android:layout_height="wrap_content"
+           android:id="@+id/recycler"/>
 
-        <LinearLayout
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/cdcdcd_kam_stroke">
+
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/cdcdcd_kam_stroke">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_marginTop="18dp"
-                android:text="          Lorem Ipsum is simply dummy text of the
+            android:padding="5dp"
+            android:layout_marginTop="18dp"
+            android:text="          Lorem Ipsum is simply dummy text of the
                         printing and typesetting. "/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Contact Us"
-                android:background="#000000"
-                android:padding="18dp"
-                android:textColor="#ffffff"
-                android:textAllCaps="true"
-                android:gravity="center"
-                android:id="@+id/contactus"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_gravity="center_horizontal"/>
-        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact Us"
+            android:background="#000000"
+            android:padding="18dp"
+            android:textColor="#ffffff"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:id="@+id/contactus"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center_horizontal"/>
     </LinearLayout>
+
+
 
 
     <ProgressBar

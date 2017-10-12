@@ -1,14 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'gobble'
-            keyPassword 'Zedistark1@'
-            storeFile file('C:/Users/tvs/Desktop/KeyStore.jks')
-            storePassword 'Zedistark1@'
-        }
-    }
+
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
@@ -18,7 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.config
+
     }
     buildTypes {
         release {
@@ -27,6 +20,10 @@ android {
         }
     }
     productFlavors {
+    }
+
+    repositories {
+        mavenCentral()
     }
 }
 
@@ -46,5 +43,5 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.google.android.gms:play-services-auth:9.8.0'
     compile 'com.facebook.android:facebook-android-sdk:4.6.0'
-    testCompile 'junit:junit:4.12'
 }
+apply plugin: 'com.google.gms.google-services'

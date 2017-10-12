@@ -101,7 +101,7 @@ public class BucketAdapter extends RecyclerView.Adapter<BucketAdapter.MyViewHold
                         .build();
 
                 allAPIs cr = retrofit.create(allAPIs.class);
-                Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString());
+               /* Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString());
                 call.enqueue(new Callback<AddBean>() {
                     @Override
                     public void onResponse(Call<AddBean> call, Response<AddBean> response) {
@@ -116,7 +116,7 @@ public class BucketAdapter extends RecyclerView.Adapter<BucketAdapter.MyViewHold
                     public void onFailure(Call<AddBean> call, Throwable t) {
 
                     }
-                });
+                });*/
 
             }
         });

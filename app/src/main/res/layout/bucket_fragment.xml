@@ -35,7 +35,7 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:textAllCaps="true"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="#ffffff"
                 android:layout_gravity="center_vertical"
                 android:gravity="center"/>
@@ -55,7 +55,7 @@
                 android:text="Quantity"
                 android:padding="10dp"
                 android:id="@+id/quantity"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="#ffffff"
                 android:textAllCaps="true"
                 android:layout_gravity="center_vertical"
@@ -76,7 +76,7 @@
                 android:textAllCaps="true"
                 android:padding="10dp"
                 android:id="@+id/price"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="#ffffff"
                 android:layout_gravity="center_vertical"
                 android:gravity="center"/>

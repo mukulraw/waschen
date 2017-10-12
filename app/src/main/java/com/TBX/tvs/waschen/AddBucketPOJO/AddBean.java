@@ -3,6 +3,7 @@ package com.TBX.tvs.waschen.AddBucketPOJO;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
 
 
 public class AddBean {
@@ -13,12 +14,15 @@ public class AddBean {
     @SerializedName("status")
     @Expose
     private String status;
+    @SerializedName("cartid")
+    @Expose
+    private String cartid;
     @SerializedName("bucketCount")
     @Expose
     private String bucketCount;
     @SerializedName("data")
     @Expose
-    private Data data;
+    private List<Datum> data = null;
 
     public String getMessage() {
         return message;
@@ -36,6 +40,14 @@ public class AddBean {
         this.status = status;
     }
 
+    public String getCartid() {
+        return cartid;
+    }
+
+    public void setCartid(String cartid) {
+        this.cartid = cartid;
+    }
+
     public String getBucketCount() {
         return bucketCount;
     }
@@ -44,11 +56,11 @@ public class AddBean {
         this.bucketCount = bucketCount;
     }
 
-    public Data getData() {
+    public List<Datum> getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(List<Datum> data) {
         this.data = data;
     }
 }

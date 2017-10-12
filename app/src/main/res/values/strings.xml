@@ -4,4 +4,5 @@
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
     <string name="tap"><![CDATA[WASH & FOLD]]></string>
+    <string name="facebook_app_id">163605360890457</string>
 </resources>

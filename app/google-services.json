@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "982448237999",
+    "project_id": "waschen-182710"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982448237999:android:4119fefd991b3b5c",
+        "android_client_info": {
+          "package_name": "com.TBX.tvs.waschen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982448237999-q68v34dh1mvc3n6lt8lnrbvbaqq7pk1s.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "982448237999-sf3d12a1i3802l5dddd2jtqreoob0i35.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.TBX.tvs.waschen",
+            "certificate_hash": "c4685813035a8e31a04e74a5aa55d71e8b16b0e7"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5F2VbWfkrdPQWcR0ZAmPSIZ6QlQj-uI0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
