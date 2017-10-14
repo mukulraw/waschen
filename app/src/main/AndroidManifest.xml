@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".Splash"
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Splash"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,31 +33,43 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-
-        <activity android:name=".GetStarted"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SignIn"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".CreateAccount"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Checkout"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".History"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".OrderDetail"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ModusOperandi"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Faqs"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Contactus"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Subscription"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".BucketCart"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ViewMore"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".GetStarted"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignIn"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateAccount"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Checkout"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".History"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ModusOperandi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Faqs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Contactus"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Subscription"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BucketCart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewMore"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Edit"></activity>
     </application>
 
 </manifest>

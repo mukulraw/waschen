@@ -9,6 +9,7 @@ import java.util.List;
 public class GetBean {
 
 
+
     @SerializedName("message")
     @Expose
     private String message;
@@ -64,5 +65,6 @@ public class GetBean {
     public void setData(List<Datum> data) {
         this.data = data;
     }
+
 
 }

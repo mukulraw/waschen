@@ -69,7 +69,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
 
 
 
-                //ft.addToBackStack(null);
+                ft.addToBackStack(null);
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
                 ft.commit();
 
@@ -104,4 +104,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
 
         }
     }
+
+
 }

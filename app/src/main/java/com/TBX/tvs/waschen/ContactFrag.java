@@ -84,8 +84,6 @@ public class ContactFrag extends Fragment {
                     @Override
                     public void onResponse(Call<SubmitBean> call, Response<SubmitBean> response) {
 
-
-                        Toast.makeText(getContext(),response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         bar.setVisibility(View.GONE);
                     }
 

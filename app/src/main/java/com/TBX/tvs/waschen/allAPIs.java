@@ -61,7 +61,7 @@ public interface allAPIs {
     @Multipart
     @POST("waschen_api/get_bucket.php")
     Call<GetBean> get (
-            @Part("userId") String id,
+            @Part("userid") String id,
             @Part("cartid") String cat
 
     );
@@ -89,16 +89,18 @@ public interface allAPIs {
 
     @Multipart
     @POST("waschen_api/remove_bucket.php")
-    Call<RemoveBean> remove (
+    Call<GetBean> remove (
             @Part("userId") String id ,
+            @Part("cartid") String cart ,
             @Part("productId") String pro
 
     );
 
     @Multipart
     @POST("/waschen_api/clear_bucket.php")
-    Call<UpdateBean> clear (
-            @Part("userId") String id 
+    Call<GetBean> clear (
+            @Part("userId") String id ,
+            @Part("cartid") String cart
 
     );
 
@@ -185,7 +187,7 @@ public interface allAPIs {
             @Part("comment") String c
     );
 
-    @GET("waschen_api/delivey_method.php")
+    @GET("waschen_api/bucket_count.php")
     Call<BucketCountBean> getBucketCount ();
 
 }

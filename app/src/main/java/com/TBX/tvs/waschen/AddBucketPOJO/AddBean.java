@@ -63,4 +63,5 @@ public class AddBean {
     public void setData(List<Datum> data) {
         this.data = data;
     }
+
 }

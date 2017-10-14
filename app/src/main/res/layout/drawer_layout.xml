@@ -26,6 +26,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="10dp"
+                android:id="@+id/user"
                 android:layout_marginStart="18dp"
                 android:background="@drawable/men"
                 android:src="@drawable/profile" />
@@ -70,6 +71,7 @@
                     android:textColor="#ffffff"
                     android:padding="10dp"
                     android:textSize="20sp"
+                    android:id="@+id/name"
                     android:layout_marginStart="18dp"/>
 
 
@@ -80,6 +82,7 @@
                     android:text="Lorem Ipsum is simply Dummy."
                     android:textColor="#ffffff"
                     android:paddingStart="10dp"
+                    android:id="@+id/email"
                     android:paddingEnd="10dp"
                     android:layout_marginBottom="18dp"
                     android:textSize="15sp"
@@ -88,6 +91,74 @@
             </LinearLayout>
 
         </RelativeLayout>
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/service"
+            android:text="Service"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/service"
+            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Bucket"
+            android:text="Bucket"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/buck"
+            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/history"
+            android:gravity="center_vertical"
+            android:text="History"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/history"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="#cdcdcd"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,15 +168,11 @@
             android:drawableStart="@drawable/profile"
             android:drawablePadding="10dp"
             android:padding="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:visibility="gone"
-            android:background="#cdcdcd"/>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -122,52 +189,11 @@
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
             android:drawablePadding="10dp"
-            android:drawableStart="@drawable/profile"
+            android:drawableStart="@drawable/modus"
             android:padding="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:visibility="gone"
-            android:background="#cdcdcd"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/service"
-            android:text="Service"
-            android:gravity="center_vertical"
-            android:textSize="15sp"
-            android:drawablePadding="10dp"
-            android:drawableStart="@drawable/profile"
-            android:padding="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:visibility="gone"
-            android:background="#cdcdcd"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/history"
-            android:gravity="center_vertical"
-            android:text="History"
-            android:drawablePadding="10dp"
-            android:drawableStart="@drawable/profile"
-            android:textSize="15sp"
-            android:padding="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -184,8 +210,8 @@
             android:textSize="15sp"
             android:drawableStart="@drawable/profile"
             android:drawablePadding="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             />
 
         <TextView
@@ -201,22 +227,22 @@
             android:text="Wallet"
             android:gravity="center_vertical"
             android:drawablePadding="10dp"
-            android:drawableStart="@drawable/profile"
+            android:drawableStart="@drawable/walletdra"
             android:textSize="15sp"
 
             android:padding="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             />
 
         <TextView
             android:id="@+id/myplan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
-            android:layout_marginStart="18dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
             android:drawablePadding="10dp"
-            android:drawableStart="@drawable/profile"
+            android:drawableStart="@drawable/subscription"
             android:padding="10dp"
             android:gravity="center_vertical"
             android:text="Subscription"
@@ -233,13 +259,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/faqs"
             android:textSize="15sp"
-            android:drawableStart="@drawable/profile"
+            android:drawableStart="@drawable/faq"
             android:drawablePadding="10dp"
             android:text="Faqs"
             android:gravity="center_vertical"
             android:padding="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             />
 
         <TextView
@@ -254,12 +280,12 @@
             android:id="@+id/contactus"
             android:text="Contact Us"
             android:gravity="center_vertical"
-            android:drawableStart="@drawable/profile"
+            android:drawableStart="@drawable/contact"
             android:drawablePadding="10dp"
             android:textSize="15sp"
             android:padding="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             />
 
         <TextView
@@ -290,15 +316,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/blog"
+            android:id="@+id/logout"
             android:text="Logout"
             android:gravity="center_vertical"
             android:textSize="15sp"
             android:drawablePadding="10dp"
-            android:drawableStart="@drawable/profile"
+            android:drawableStart="@drawable/logout"
             android:padding="10dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             />
 
 

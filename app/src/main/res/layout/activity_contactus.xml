@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="18dp"
+                android:padding="15dp"
                 android:textAllCaps="true"
                 android:text="Drop Us Your Query"
                 android:textColor="#000000" />
@@ -27,13 +27,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
                 android:background="@drawable/cdcdcd_white"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
 
 
                 <TextView
@@ -53,8 +53,8 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
-                    android:padding="5dp"
                     android:hint="Mukul Rawat"
+                    android:padding="5dp"
                     android:textColor="#817f7f" />
 
                 <TextView
@@ -73,8 +73,8 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
-                    android:padding="5dp"
                     android:hint="nisha@technobrix.com"
+                    android:padding="5dp"
                     android:textColor="#7e7a7a" />
 
                 <TextView
@@ -93,8 +93,8 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
-                    android:padding="5dp"
                     android:hint="7678119291"
+                    android:padding="5dp"
                     android:textColor="#747373" />
 
 
@@ -110,11 +110,10 @@
                     android:id="@+id/comment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
                     android:background="@drawable/cdcdcd_white"
-                    android:padding="50dp"
-                    />
+                    android:padding="50dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -129,13 +128,13 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginEnd="18dp"
-                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/black_text_round"
                         android:gravity="center"
-                        android:text="SUBMIT"
                         android:minHeight="30dp"
+                        android:text="SUBMIT"
                         android:textColor="#ffffff" />
                 </LinearLayout>
             </LinearLayout>
@@ -143,9 +142,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
-                android:padding="18dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:padding="15dp"
                 android:text="CONTACT US"
                 android:textColor="#000000" />
 
@@ -153,8 +152,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="18dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/cdcdcd_white"
                 android:orientation="vertical">
@@ -170,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="5dp"
                     android:padding="5dp"
                     android:paddingStart="18dp"
                     android:text="Address"
@@ -229,6 +228,7 @@
                     android:layout_marginStart="18dp"
                     android:padding="5dp"
                     android:paddingStart="18dp"
+                    android:layout_marginBottom="5dp"
                     android:text="xxx, xxx,xxxxx" />
 
 

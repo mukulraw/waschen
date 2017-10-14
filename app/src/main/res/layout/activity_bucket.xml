@@ -2,6 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -9,11 +12,34 @@
         android:orientation="vertical">
 
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/black_water"
+                android:scaleType="centerCrop"
+                />
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#00000000"
+                />
+
+        </RelativeLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="8"
+            android:weightSum="10"
             android:background="#000"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
@@ -23,7 +49,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="4.5"
                 android:orientation="horizontal">
 
 
@@ -39,6 +65,8 @@
                     android:textColor="#ffffff"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"/>
+
+
             </LinearLayout>
 
 
@@ -58,14 +86,14 @@
                     android:textSize="12sp"
                     android:textColor="#ffffff"
                     android:textAllCaps="true"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center"
                     android:gravity="center"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2.5"
                 android:orientation="horizontal">
 
 
@@ -78,7 +106,7 @@
                     android:id="@+id/price"
                     android:textSize="12sp"
                     android:textColor="#ffffff"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -91,7 +119,7 @@
             android:clipToPadding="false"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:paddingBottom="115dp"/>
+            android:layout_marginBottom="1dp"/>
 
     </LinearLayout>
 
@@ -100,7 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="60dp"
         android:background="#ffffff">
 
         <TextView
@@ -110,7 +138,7 @@
 
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/total"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -153,7 +181,7 @@
                     android:background="#000"
                     android:gravity="center"
                     android:padding="15dp"
-                    android:text="Clear Cart"
+                    android:text="Clear Bucket"
                     android:textAllCaps="true"
                     android:textColor="#ffffff"
                     android:textSize="15sp" />
@@ -182,8 +210,45 @@
 
             </LinearLayout>
         </LinearLayout>
+
+
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:id="@+id/hide"
+        android:background="#c8000000"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:id="@+id/pick_date"
+            android:layout_gravity="center_vertical"
+            android:text="Pick Up Date"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:id="@+id/proceed"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:text="Proceed To Checkout"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

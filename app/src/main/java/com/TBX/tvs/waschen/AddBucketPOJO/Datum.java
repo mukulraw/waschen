@@ -11,7 +11,7 @@ public class Datum {
     private String productId;
     @SerializedName("productName")
     @Expose
-    private String productName;
+    private Object productName;
 
     public String getProductId() {
         return productId;
@@ -21,11 +21,11 @@ public class Datum {
         this.productId = productId;
     }
 
-    public String getProductName() {
+    public Object getProductName() {
         return productName;
     }
 
-    public void setProductName(String productName) {
+    public void setProductName(Object productName) {
         this.productName = productName;
     }
 }

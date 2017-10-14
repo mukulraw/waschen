@@ -314,7 +314,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:orientation="horizontal"
-        android:layout_marginTop="18dp">
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -324,7 +325,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="18dp"
+        android:padding="15dp"
         android:textColor="#4e4d4d"
         android:text="Use Billing address"/>
 
@@ -337,7 +338,7 @@
         android:background="#000"
         android:textColor="#ffffff"
         android:paddingStart="40dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="10dp"
         android:text="Delivery Method"
         />
 
@@ -352,19 +353,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:orientation="horizontal"
-            android:layout_marginTop="18dp">
+            android:layout_marginTop="10dp">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="18dp"
+                android:padding="15dp"
+                android:layout_gravity="center_vertical"
                 android:textColor="#4e4d4d"
                 android:text="Standard Delivery(1 Day)"/>
 
@@ -373,18 +376,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:orientation="horizontal">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="18dp"
+                android:padding="15dp"
+                android:layout_gravity="center_vertical"
                 android:textColor="#4e4d4d"
                 android:text="Express Delivery(8 Hours) Charged Rs 50"/>
 
@@ -400,7 +406,7 @@
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="#ffffff"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="18dp"
             android:background="@color/colorPrimary"
            />
     </LinearLayout>

@@ -216,6 +216,9 @@ facebbok.setOnClickListener(new View.OnClickListener() {
 
                                     Bean b = (Bean)getApplicationContext();
                                     b.userid = response.body().getData().getUserId();
+                                    b.email = response.body().getData().getEmail();
+                                    b.name = response.body().getData().getUserName();
+
                                     Log.d("skjg" , "response");
 
 

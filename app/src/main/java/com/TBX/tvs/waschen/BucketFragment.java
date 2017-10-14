@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +41,9 @@ public class BucketFragment extends Fragment {
     TextView clearcart , addmore ;
     List<Datum> list;
     ProgressBar bar;
+
+    LinearLayout hide;
+
     String catId;
 
     @Nullable
@@ -53,12 +57,14 @@ public class BucketFragment extends Fragment {
         bar = (ProgressBar) view.findViewById(R.id.progress);
         manager = new GridLayoutManager(getContext(),1);
 
+        hide = (LinearLayout) ((MainActivity)getContext()).findViewById(R.id.hide);
+
         list = new ArrayList<>();
         adapter = new BucketAdapter(getContext() , list);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
         addmore = (TextView)view.findViewById(R.id.addmore);
-        clearcart = (TextView)view.findViewById(R.id.clearcart);
+        clearcart = (TextView)view.findViewById(R.id.clear);
         addmore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,8 +98,6 @@ public class BucketFragment extends Fragment {
         call.enqueue(new Callback<ProductBean>() {
             @Override
             public void onResponse(Call<ProductBean> call, Response<ProductBean> response) {
-
-                Toast.makeText(getContext(),response.body().getData().get(0).getCatId(),Toast.LENGTH_SHORT).show();
 
                 adapter.setgrid(response.body().getData());
 
@@ -141,9 +145,9 @@ public class BucketFragment extends Fragment {
             final Datum item = list.get(position);
 
             holder.name.setText(item.getProductName());
-            holder.price.setText(item.getPrice());
+            holder.price.setText("Rs. " + item.getPrice());
 
-            holder.down.setOnClickListener(new View.OnClickListener() {
+            holder.up.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -162,7 +166,7 @@ public class BucketFragment extends Fragment {
             });
 
 
-            holder.up.setOnClickListener(new View.OnClickListener() {
+            holder.down.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -199,11 +203,27 @@ public class BucketFragment extends Fragment {
                         @Override
                         public void onResponse(Call<AddBean> call, Response<AddBean> response) {
 
-                            Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(),response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
                             bar.setVisibility(View.GONE);
 
+                            Bean b = (Bean)context.getApplicationContext();
 
+                            b.cartid = response.body().getCartid();
+
+                            String cou = response.body().getBucketCount();
+
+                            int count = Integer.parseInt(cou);
+
+
+                            if (count > 0 )
+                            {
+                                hide.setVisibility(View.VISIBLE);
+                            }
+                            else
+                            {
+                                hide.setVisibility(View.GONE);
+                            }
 
 
 
@@ -250,6 +270,7 @@ public class BucketFragment extends Fragment {
 
             }
         }
+
     }
 
 }

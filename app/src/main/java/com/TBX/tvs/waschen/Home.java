@@ -77,7 +77,7 @@ public class Home extends Fragment {
                 Bean b = (Bean)getContext().getApplicationContext();
 
                 adapter.setgrid(response.body().getData());
-                Toast.makeText(b, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
                 bar.setVisibility(View.GONE);
 
             }
@@ -94,10 +94,16 @@ public class Home extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(getContext() , Contactus.class);
 
-                startActivity(i);
-                bar.setVisibility(View.GONE);
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ContactFrag fragment = new ContactFrag();
+                ft.replace(R.id.replace, fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.addToBackStack(null);
+                ft.commit();
+
+
             }
         });
 

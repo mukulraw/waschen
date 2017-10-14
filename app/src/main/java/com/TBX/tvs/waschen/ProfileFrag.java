@@ -22,9 +22,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-/**
- * Created by tvs on 10/11/2017.
- */
+
 
 public class ProfileFrag extends Fragment {
 

@@ -13,10 +13,13 @@ public class RemoveBean {
     private String message;
     @SerializedName("status")
     @Expose
-    private String status;
+    private Integer status;
     @SerializedName("totalPrice")
     @Expose
     private String totalPrice;
+    @SerializedName("totalItem")
+    @Expose
+    private String totalItem;
     @SerializedName("data")
     @Expose
     private List<Datum> data = null;
@@ -29,11 +32,11 @@ public class RemoveBean {
         this.message = message;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -45,6 +48,14 @@ public class RemoveBean {
         this.totalPrice = totalPrice;
     }
 
+    public String getTotalItem() {
+        return totalItem;
+    }
+
+    public void setTotalItem(String totalItem) {
+        this.totalItem = totalItem;
+    }
+
     public List<Datum> getData() {
         return data;
     }
@@ -52,5 +63,6 @@ public class RemoveBean {
     public void setData(List<Datum> data) {
         this.data = data;
     }
+
 
 }
