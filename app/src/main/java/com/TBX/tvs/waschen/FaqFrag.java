@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -39,6 +41,8 @@ public class FaqFrag extends Fragment{
     FaqAdapter adapter;
     List<Datum> list;
 
+    Toolbar toolbar;
+
 
 
     @Nullable
@@ -46,7 +50,7 @@ public class FaqFrag extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
          View v = inflater.inflate(R.layout.activity_faqs , container , false);
 
-
+        toolbar = (Toolbar) ((MainActivity) getContext()).findViewById(R.id.toolbar);
 
         recyclerView = (RecyclerView)v. findViewById(R.id.recycler);
         list = new ArrayList<>();
@@ -90,4 +94,20 @@ public class FaqFrag extends Fragment{
 
          return v;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        DrawerLayout drawer = (DrawerLayout)((MainActivity) getContext()).findViewById(R.id.activity_main);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                getActivity(), drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        toolbar.setTitle("FAQs");
+
+    }
+
 }

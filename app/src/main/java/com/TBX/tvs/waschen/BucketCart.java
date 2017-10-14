@@ -49,6 +49,8 @@ public class BucketCart extends AppCompatActivity {
     List<Datum>list;
     ProgressBar bar;
 
+    String date1 = "";
+
     Context context;
     Dialog dialog;
 
@@ -90,8 +92,17 @@ public class BucketCart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(BucketCart.this , Checkout.class);
-                startActivity(i);
+                if (date1.length()>0)
+                {
+                    Intent i = new Intent(BucketCart.this , Checkout.class);
+                    startActivity(i);
+                }
+                else
+                {
+                    Toast.makeText(BucketCart.this , "Please select a Pickup date" , Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
 
@@ -122,6 +133,8 @@ public class BucketCart extends AppCompatActivity {
                         String day = String.valueOf(date.getDayOfMonth());
                         String month = String.valueOf(date.getMonth() + 1);
                         String year = String.valueOf(date.getYear());
+
+                        date1 = day + "-" + month + "-" + year;
 
                         pick.setText(day + "-" + month + "-" + year);
 
@@ -248,7 +261,6 @@ public class BucketCart extends AppCompatActivity {
         List<Datum> list = new ArrayList<>();
 
 
-
         public BucketAdapter(Context context , List<Datum>list){
             this.list = list;
             this.context = context;
@@ -285,6 +297,56 @@ public class BucketCart extends AppCompatActivity {
 
                     holder.quantity.setText(String.valueOf(q1));
 
+                    bar.setVisibility(View.VISIBLE);
+                    Bean b = (Bean)context.getApplicationContext();
+
+                    Retrofit retrofit = new Retrofit.Builder()
+                            .baseUrl(b.baseURL)
+                            .addConverterFactory(ScalarsConverterFactory.create())
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+
+                    allAPIs cr = retrofit.create(allAPIs.class);
+                    Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString() , holder.price.getText().toString());
+                    call.enqueue(new Callback<AddBean>() {
+                        @Override
+                        public void onResponse(Call<AddBean> call, Response<AddBean> response) {
+
+                            Toast.makeText(context ,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                            bar.setVisibility(View.GONE);
+
+                            Bean b = (Bean)context.getApplicationContext();
+
+                            b.cartid = response.body().getCartid();
+
+                            String cou = response.body().getBucketCount();
+
+                            int count = Integer.parseInt(cou);
+
+
+
+
+
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<AddBean> call, Throwable t) {
+
+                            bar.setVisibility(View.GONE);
+
+                            Log.d("hmm" , t.toString());
+
+
+                        }
+                    });
+
+
+
+
+
+
                 }
             });
 
@@ -300,6 +362,51 @@ public class BucketCart extends AppCompatActivity {
                     q1++;
 
                     holder.quantity.setText(String.valueOf(q1));
+
+                    bar.setVisibility(View.VISIBLE);
+                    Bean b = (Bean)context.getApplicationContext();
+
+                    Retrofit retrofit = new Retrofit.Builder()
+                            .baseUrl(b.baseURL)
+                            .addConverterFactory(ScalarsConverterFactory.create())
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+
+                    allAPIs cr = retrofit.create(allAPIs.class);
+                    Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString() , holder.price.getText().toString());
+                    call.enqueue(new Callback<AddBean>() {
+                        @Override
+                        public void onResponse(Call<AddBean> call, Response<AddBean> response) {
+
+                            Toast.makeText(context ,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                            bar.setVisibility(View.GONE);
+
+                            Bean b = (Bean)context.getApplicationContext();
+
+                            b.cartid = response.body().getCartid();
+
+                            String cou = response.body().getBucketCount();
+
+                            int count = Integer.parseInt(cou);
+
+
+
+
+
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<AddBean> call, Throwable t) {
+
+                            bar.setVisibility(View.GONE);
+
+                            Log.d("hmm" , t.toString());
+
+
+                        }
+                    });
 
                 }
             });

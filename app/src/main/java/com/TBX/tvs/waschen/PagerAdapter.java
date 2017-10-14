@@ -13,19 +13,19 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        if (position == 0)
+        /*if (position == 0)
         {
             return new Billing();
         }
         else if (position == 1)
         {
             return new Shipping();
-        }
-        else if (position == 2)
+        }*/
+        if (position == 0)
         {
             return new Payment();
         }
-        else if (position == 3)
+        else if (position == 1)
         {
             return new Done();
         }
@@ -34,6 +34,6 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 2;
     }
 }

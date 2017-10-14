@@ -82,17 +82,181 @@ public class SignIn extends AppCompatActivity implements GoogleApiClient.OnConne
                         Log.d("asdasdasd" , object.toString());
 
                         try {
-                            String user = object.getString("id");
-                            final String pass = object.getString("email");
+                            final String pass = object.getString("id");
+                            final String email1 = object.getString("email");
                             final String name = object.getString("name");
 
-                            Log.d("user" , user);
-                            Log.d("pass" , pass);
-                            Log.d("name" , name);
+
+                            final Bean b = (Bean)getApplicationContext();
+
+                            bar.setVisibility(View.VISIBLE);
+
+
+                            final Retrofit retrofit = new Retrofit.Builder()
+                                    .baseUrl(b.baseURL)
+                                    .addConverterFactory(ScalarsConverterFactory.create())
+                                    .addConverterFactory(GsonConverterFactory.create())
+                                    .build();
+
+                            final allAPIs cr = retrofit.create(allAPIs.class);
+                            Call<LoginBean> call = cr.login(email1 , pass );
+
+                            call.enqueue(new Callback<LoginBean>() {
+                                @Override
+                                public void onResponse(Call<LoginBean> call, Response<LoginBean> response) {
+
+
+
+                                    if (Objects.equals(response.body().getStatus(), 1))
+                                    {
+
+                                        Toast.makeText(SignIn.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                        Log.d("asdasd", "1");
+
+                                        Bean b = (Bean)getApplicationContext();
+                                        b.userid = response.body().getData().getUserId();
+                                        b.email = response.body().getData().getEmail();
+                                        b.name = response.body().getData().getUserName();
+
+                                        Log.d("skjg" , "response");
+
+
+                                        edit.putString("email" , email1);
+                                        edit.putString("pass" , pass);
+                                        edit.apply();
+
+
+                                        Intent i = new Intent(SignIn .this , MainActivity.class);
+                                        startActivity(i);
+                                        finish();
+
+                                        bar.setVisibility(View.GONE);
+                                    }
+                                    else
+                                    {
+
+                                        bar.setVisibility(View.VISIBLE);
+
+
+
+                                        Log.d("asdasd", "2");
+
+                                        Call<CreateBean> call2 = cr.social(name , email1 , pass , "");
+                                        call2.enqueue(new Callback<CreateBean>() {
+                                            @Override
+                                            public void onResponse(Call<CreateBean> call, Response<CreateBean> response) {
+
+                                                Log.d("asdasd", "3");
+
+                                                if (Objects.equals(response.body().getStatus(), "1")){
+
+                                                    Log.d("fhs" , "response");
+
+
+
+                                                        Call<LoginBean> call3 = cr.login(email1 , pass );
+
+                                                        call3.enqueue(new Callback<LoginBean>() {
+                                                            @Override
+                                                            public void onResponse(Call<LoginBean> call, Response<LoginBean> response) {
+
+
+
+                                                                if (Objects.equals(response.body().getStatus(), 1))
+
+                                                                {
+
+                                                                    Toast.makeText(SignIn.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                                                    Bean b = (Bean)getApplicationContext();
+                                                                    b.userid = response.body().getData().getUserId();
+                                                                    b.email = response.body().getData().getEmail();
+                                                                    b.name = response.body().getData().getUserName();
+
+                                                                    Log.d("skjg" , "response");
+
+
+                                                                    edit.putString("email" , email1);
+                                                                    edit.putString("pass" , pass);
+                                                                    edit.apply();
+
+
+                                                                    Intent i = new Intent(SignIn.this , MainActivity.class);
+                                                                    startActivity(i);
+                                                                    finish();
+
+                                                                    bar.setVisibility(View.GONE);
+                                                                }
+
+                                                                Log.d("dfjsdg" , response.body().getMessage());
+
+
+
+
+                                                            }
+
+                                                            @Override
+                                                            public void onFailure(Call<LoginBean> call, Throwable t) {
+
+                                                                bar.setVisibility(View.GONE);
+
+                                                                Log.d("fgkjf" , t.toString());
+
+                                                            }
+                                                        });
+
+
+
+
+                                                }
+                                                else
+                                                {
+                                                    Toast.makeText(SignIn.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                                    bar.setVisibility(View.GONE);
+                                                }
+
+
+
+
+                                            }
+
+
+                                            @Override
+                                            public void onFailure(Call<CreateBean> call, Throwable t) {
+
+                                                bar.setVisibility(View.GONE);
+
+                                                Log.d("bsdkfs" , t.toString());
+
+                                            }
+                                        });
+
+                                    }
+
+                                    Log.d("dfjsdg" , response.body().getMessage());
+
+
+
+
+                                }
+
+                                @Override
+                                public void onFailure(Call<LoginBean> call, Throwable t) {
+
+                                    bar.setVisibility(View.GONE);
+
+                                    Log.d("fgkjf" , t.toString());
+
+                                }
+                            });
+
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
 
 
 
@@ -318,6 +482,178 @@ facebbok.setOnClickListener(new View.OnClickListener() {
             Log.d("mail" , acct.getEmail());
             Log.d("name", acct.getDisplayName());
             Log.d("id", acct.getId());
+
+
+            final String name = acct.getDisplayName();
+            final String pass = acct.getId();
+            final String email1 = acct.getEmail();
+
+
+
+            bar.setVisibility(View.VISIBLE);
+
+            final Bean b = (Bean)getApplicationContext();
+
+
+            final Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(b.baseURL)
+                    .addConverterFactory(ScalarsConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            final allAPIs cr = retrofit.create(allAPIs.class);
+            Call<LoginBean> call = cr.login(email1 , pass );
+
+            call.enqueue(new Callback<LoginBean>() {
+                @Override
+                public void onResponse(Call<LoginBean> call, Response<LoginBean> response) {
+
+
+
+                    if (Objects.equals(response.body().getStatus(), 1))
+                    {
+
+                        Toast.makeText(SignIn.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                        Bean b = (Bean)getApplicationContext();
+                        b.userid = response.body().getData().getUserId();
+                        b.email = response.body().getData().getEmail();
+                        b.name = response.body().getData().getUserName();
+
+                        Log.d("skjg" , "response");
+
+
+                        edit.putString("email" , email1);
+                        edit.putString("pass" , pass);
+                        edit.apply();
+
+
+                        Intent i = new Intent(SignIn .this , MainActivity.class);
+                        startActivity(i);
+                        finish();
+
+                        bar.setVisibility(View.GONE);
+                    }
+                    else
+                    {
+
+                        bar.setVisibility(View.VISIBLE);
+
+
+
+
+
+                        Call<CreateBean> call2 = cr.social(name , email1 , pass , "");
+                        call2.enqueue(new Callback<CreateBean>() {
+                            @Override
+                            public void onResponse(Call<CreateBean> call, Response<CreateBean> response) {
+
+                                if (Objects.equals(response.body().getStatus(), "1")){
+
+                                    Log.d("fhs" , "response");
+
+                                    if (Objects.equals(response.body().getMessage(), "Registered Successfully"))
+                                    {
+
+                                        Call<LoginBean> call3 = cr.login(email1 , pass );
+
+                                        call3.enqueue(new Callback<LoginBean>() {
+                                            @Override
+                                            public void onResponse(Call<LoginBean> call, Response<LoginBean> response) {
+
+
+
+                                                if (Objects.equals(response.body().getStatus(), 1))
+
+                                                {
+
+                                                    Toast.makeText(SignIn.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                                    Bean b = (Bean)getApplicationContext();
+                                                    b.userid = response.body().getData().getUserId();
+                                                    b.email = response.body().getData().getEmail();
+                                                    b.name = response.body().getData().getUserName();
+
+                                                    Log.d("skjg" , "response");
+
+
+                                                    edit.putString("email" , email1);
+                                                    edit.putString("pass" , pass);
+                                                    edit.apply();
+
+
+                                                    Intent i = new Intent(SignIn.this , MainActivity.class);
+                                                    startActivity(i);
+                                                    finish();
+
+                                                    bar.setVisibility(View.GONE);
+                                                }
+
+                                                Log.d("dfjsdg" , response.body().getMessage());
+
+
+
+
+                                            }
+
+                                            @Override
+                                            public void onFailure(Call<LoginBean> call, Throwable t) {
+
+                                                bar.setVisibility(View.GONE);
+
+                                                Log.d("fgkjf" , t.toString());
+
+                                            }
+                                        });
+
+                                    }
+
+
+                                }
+                                else
+                                {
+                                    Toast.makeText(SignIn.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                    bar.setVisibility(View.GONE);
+                                }
+
+
+
+
+                            }
+
+
+                            @Override
+                            public void onFailure(Call<CreateBean> call, Throwable t) {
+
+                                bar.setVisibility(View.GONE);
+
+                                Log.d("bsdkfs" , t.toString());
+
+                            }
+                        });
+
+                    }
+
+                    Log.d("dfjsdg" , response.body().getMessage());
+
+
+
+
+                }
+
+                @Override
+                public void onFailure(Call<LoginBean> call, Throwable t) {
+
+                    bar.setVisibility(View.GONE);
+
+                    Log.d("fgkjf" , t.toString());
+
+                }
+            });
+
+
+
 
         }
     }

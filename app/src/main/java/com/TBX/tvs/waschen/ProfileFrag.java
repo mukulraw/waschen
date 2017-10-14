@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,6 +32,7 @@ public class ProfileFrag extends Fragment {
 
     ProgressBar bar;
 
+    Toolbar toolbar;
 
 
     @Nullable
@@ -38,6 +41,7 @@ public class ProfileFrag extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_profile, container, false);
 
+        toolbar = (Toolbar) ((MainActivity) getContext()).findViewById(R.id.toolbar);
 
         name = (TextView) view.findViewById(R.id.name);
         mobile = (TextView) view.findViewById(R.id.mobile);
@@ -95,6 +99,15 @@ public class ProfileFrag extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+
+        DrawerLayout drawer = (DrawerLayout)((MainActivity) getContext()).findViewById(R.id.activity_main);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                getActivity(), drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        toolbar.setTitle("My Profile");
 
     }
 }

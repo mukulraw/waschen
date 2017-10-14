@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +47,10 @@ public class BucketFragment extends Fragment {
 
     LinearLayout hide;
 
+    Toolbar toolbar;
+
+    String title;
+
     String catId;
 
     @Nullable
@@ -52,6 +59,11 @@ public class BucketFragment extends Fragment {
         View view = inflater.inflate(R.layout.bucket_fragment , container ,false);
 
         catId = getArguments().getString("catid");
+        title = getArguments().getString("name");
+
+        toolbar = (Toolbar) ((MainActivity) getContext()).findViewById(R.id.toolbar);
+
+        toolbar.setTitle(title);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         bar = (ProgressBar) view.findViewById(R.id.progress);
@@ -69,12 +81,8 @@ public class BucketFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                /*FragmentTransaction ft = fragmentManager.beginTransaction();
-                Home fragment = new Home();
-                ft.replace(R.id.replace, fragment);
-                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
-                ft.addToBackStack(null);
-                ft.commit();*/
+                FragmentManager fm = ((MainActivity) getContext()).getSupportFragmentManager();
+                fm.popBackStack();
 
             }
         });
@@ -273,4 +281,20 @@ public class BucketFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        toolbar.setNavigationIcon(R.drawable.back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentManager fm = ((MainActivity) getContext()).getSupportFragmentManager();
+                fm.popBackStack();
+
+            }
+        });
+
+    }
 }

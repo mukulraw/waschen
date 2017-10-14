@@ -67,6 +67,15 @@ public interface allAPIs {
     );
 
 
+    /*@Multipart
+    @POST("waschen_api/get_bucket.php")
+    Call<GetBean> updateBusket(
+            @Part("userid") String id,
+            @Part("cartid") String cat
+
+    );*/
+
+
     @Multipart
     @POST("waschen_api/add_bucket.php")
     Call<AddBean> add (
@@ -133,7 +142,7 @@ public interface allAPIs {
 
     @Multipart
     @POST("waschen_api/social_sign_up.php")
-    Call<SocialBean> social (
+    Call<CreateBean> social (
             @Part("name") String name ,
             @Part("email") String email ,
             @Part("pid") String pid ,

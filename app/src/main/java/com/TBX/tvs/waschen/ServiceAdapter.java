@@ -62,6 +62,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
                 Bundle b = new Bundle();
 
                 b.putString("catid" , item.getUserId());
+                b.putString("name" , item.getTitle());
 
                 fragment.setArguments(b);
 

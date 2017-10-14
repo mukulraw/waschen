@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Waschen.iml" filepath="$PROJECT_DIR$/Waschen.iml" />
+      <module fileurl="file://D:\AndroidStudioProjects\waschen\Waschen.iml" filepath="D:\AndroidStudioProjects\waschen\Waschen.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\AndroidStudioProjects\waschen\app\app.iml" filepath="D:\AndroidStudioProjects\waschen\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/waschen.iml" filepath="$PROJECT_DIR$/.idea/waschen.iml" />
     </modules>
   </component>
 </project>

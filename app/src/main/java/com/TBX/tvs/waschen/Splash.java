@@ -137,7 +137,7 @@ public class Splash extends AppCompatActivity {
 
 
 
-        /*try {
+        try {
             PackageInfo info = getPackageManager().getPackageInfo(
                     getPackageName(), PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) {
@@ -147,7 +147,7 @@ public class Splash extends AppCompatActivity {
             }
         } catch (PackageManager.NameNotFoundException e) {
         } catch (NoSuchAlgorithmException e) {
-        }*/
+        }
 
     }
 

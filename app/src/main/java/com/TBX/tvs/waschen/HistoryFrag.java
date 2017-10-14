@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -39,6 +41,8 @@ public class HistoryFrag extends Fragment{
     ProgressBar bar;
     List<Datum>list;
 
+    Toolbar toolbar;
+
 
     @Nullable
     @Override
@@ -48,6 +52,8 @@ public class HistoryFrag extends Fragment{
 
         recyclerView = (RecyclerView)v. findViewById(R.id.recycler);
         manager = new GridLayoutManager(getContext() ,1);
+
+        toolbar = (Toolbar) ((MainActivity) getContext()).findViewById(R.id.toolbar);
 
         bar = (ProgressBar)v.findViewById(R.id.progress);
 
@@ -64,6 +70,14 @@ public class HistoryFrag extends Fragment{
     public void onResume() {
         super.onResume();
 
+        toolbar.setTitle("Orders History");
+
+        DrawerLayout drawer = (DrawerLayout)((MainActivity) getContext()).findViewById(R.id.activity_main);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                getActivity(), drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
 
        bar.setVisibility(View.VISIBLE);
 
@@ -156,5 +170,8 @@ public class HistoryFrag extends Fragment{
             }
         }
     }
+
+
+
 
 }

@@ -17,7 +17,10 @@
        <android.support.v7.widget.RecyclerView
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:id="@+id/recycler"/>
+           android:id="@+id/recycler"
+           android:paddingBottom="170dp"
+           android:clipToPadding="false"
+           />
 
 
 
@@ -27,7 +30,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:orientation="vertical"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
@@ -41,9 +44,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
+            android:gravity="center_horizontal"
             android:layout_marginTop="18dp"
-            android:text="          Lorem Ipsum is simply dummy text of the
-                        printing and typesetting. "/>
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting. "/>
 
         <TextView
             android:layout_width="match_parent"

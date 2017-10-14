@@ -6,8 +6,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.TBX.tvs.waschen.LoginPOJO.LoginBean;
 import com.TBX.tvs.waschen.ServicesPOJO.Datum;
@@ -41,6 +45,7 @@ public class Home extends Fragment {
     ServiceAdapter adapter;
     List<Datum> list;
     TextView contact;
+    Toolbar toolbar;
 
     @Nullable
     @Override
@@ -48,6 +53,8 @@ public class Home extends Fragment {
         View view = inflater.inflate(R.layout.home_page , container , false);
 
         recyclerView = (RecyclerView)view.findViewById(R.id.recycler);
+
+        toolbar = (Toolbar) ((MainActivity) getContext()).findViewById(R.id.toolbar);
 
         contact = (TextView)view.findViewById(R.id.contactus);
         bar = (ProgressBar) view.findViewById(R.id.progress);
@@ -111,5 +118,19 @@ public class Home extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        DrawerLayout drawer = (DrawerLayout)((MainActivity) getContext()).findViewById(R.id.activity_main);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                getActivity(), drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        toolbar.setTitle("Home");
+
+    }
 
 }

@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     drawer.closeDrawer(GravityCompat.START);
                 }
-                toolbar.setTitle("Profile");
+                toolbar.setTitle("My Profile");
 
             }
         });
@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     drawer.closeDrawer(GravityCompat.START);
                 }
-                toolbar.setTitle("BucketCart");
+
 
             }
         });
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                     drawer.closeDrawer(GravityCompat.START);
                 }
 
-                toolbar.setTitle("History");
+                toolbar.setTitle("Orders History");
             }
         });
 
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     drawer.closeDrawer(GravityCompat.START);
                 }
-                toolbar.setTitle("Service");
+                toolbar.setTitle("Services");
             }
         });
 
@@ -309,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     drawer.closeDrawer(GravityCompat.START);
                 }
-                toolbar.setTitle("Faq");
+                toolbar.setTitle("FAQs");
             }
         });
 
@@ -328,7 +328,7 @@ public class MainActivity extends AppCompatActivity {
                     drawer.closeDrawer(GravityCompat.START);
                 }
 
-                toolbar.setTitle("ContactUs");
+                toolbar.setTitle("Contact Us");
             }
         });
 
@@ -429,6 +429,46 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        toolbar.setTitle("SERVICES");
+        toolbar.setTitle("Services");
+
+
+        bar.setVisibility(View.VISIBLE);
+
+        Bean b = (Bean)getApplicationContext();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(b.baseURL)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        allAPIs cr = retrofit.create(allAPIs.class);
+        Call<BucketCountBean> call = cr.getBucketCount();
+        call.enqueue(new Callback<BucketCountBean>() {
+            @Override
+            public void onResponse(Call<BucketCountBean> call, Response<BucketCountBean> response) {
+
+
+                int count = response.body().getBucketCount();
+
+
+                if (count > 0)
+                {
+                    hide.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    hide.setVisibility(View.GONE);
+                }
+
+                bar.setVisibility(View.GONE);
+
+            }
+
+            @Override
+            public void onFailure(Call<BucketCountBean> call, Throwable t) {
+                bar.setVisibility(View.GONE);
+            }
+        });
+
     }
 }
