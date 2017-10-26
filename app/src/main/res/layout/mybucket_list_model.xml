@@ -40,13 +40,12 @@
                 android:gravity="center_vertical"
                 android:padding="2dp"
                 android:id="@+id/name"
+                android:textSize="12dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:text="Lorem Ipsum" />
 
         </LinearLayout>
-
-
 
         <LinearLayout
             android:layout_width="0dp"
@@ -103,9 +102,6 @@
                     android:id="@+id/down"
                     android:src="@drawable/plus" />
             </LinearLayout>
-
-
-
 
         </LinearLayout>
 

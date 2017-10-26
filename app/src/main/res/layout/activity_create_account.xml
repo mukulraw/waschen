@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="18dp"
+        android:background="#fff"
+        android:layout_marginBottom="18dp"
+        >
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#fff"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,10 +49,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Create Account"
-            android:textSize="35sp"
+            android:textSize="25sp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:layout_marginTop="18dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             />
 
 
@@ -46,13 +64,13 @@
             android:hint="Username"
             android:id="@+id/user"
             android:padding="10dp"
-            android:paddingStart="20dp"
+            android:paddingStart="5dp"
             android:inputType="text"
-            android:paddingEnd="20dp"
+            android:paddingEnd="5dp"
             android:background="@drawable/black_stroke"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"/>
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
 
 
@@ -64,12 +82,12 @@
             android:padding="10dp"
             android:inputType="textEmailAddress"
             android:id="@+id/emailid"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:background="@drawable/black_stroke"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -78,12 +96,12 @@
             android:padding="10dp"
             android:id="@+id/mobileee"
             android:inputType="phone"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:background="@drawable/black_stroke"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -91,13 +109,13 @@
             android:hint="Password"
             android:padding="10dp"
             android:inputType="textPassword"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:id="@+id/pwd"
             android:background="@drawable/black_stroke"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
 
         <EditText
@@ -107,12 +125,12 @@
             android:padding="10dp"
             android:inputType="textPassword"
             android:id="@+id/retype"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:background="@drawable/black_stroke"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
 
         <LinearLayout
@@ -124,7 +142,7 @@
             android:gravity="center"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="10dp"
             >
 
 
@@ -132,7 +150,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="18dp">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -160,7 +178,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="18dp"
+                android:padding="5dp"
                 >
 
 
@@ -180,10 +198,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="18dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp">
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -196,7 +214,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Facebook"
-                    android:padding="18dp"
+                    android:padding="10dp"
                     android:id="@+id/facebook"
                     android:background="#2196F3"
                     android:gravity="center_vertical"
@@ -222,7 +240,7 @@
                     android:text="Google+"
                     android:textColor="#ffffff"
                     android:drawableStart="@drawable/google"
-                    android:padding="18dp"
+                    android:padding="10dp"
                     android:id="@+id/google"
                     android:drawablePadding="10dp"
                     android:background="#F44336"
@@ -233,12 +251,14 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="By Creating an account you are agree
 to your Team of Use privacy and Policy"
             android:gravity="center"
             android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:padding="5dp"/>
 
 
@@ -247,18 +267,19 @@ to your Team of Use privacy and Policy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginBottom="18dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:background="#000"
             android:gravity="center"
-            android:padding="18dp"
+            android:padding="15dp"
             android:text="CREATE ACCOUNT"
             android:textColor="#ffffff"
             android:textSize="20sp" />
     </LinearLayout>
 </ScrollView>
+    </LinearLayout>
 
     <ProgressBar
         android:layout_width="wrap_content"

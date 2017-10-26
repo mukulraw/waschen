@@ -277,7 +277,7 @@ public class BucketCart extends AppCompatActivity {
             final Datum item = list.get(position);
 
             holder.name.setText(item.getProductName());
-            holder.price.setText("Rs. " + item.getUnitprice());
+            holder.price.setText("INR. " + item.getUnitprice());
 
             holder.quantity.setText(item.getQuantity());
 

@@ -153,7 +153,7 @@ public class BucketFragment extends Fragment {
             final Datum item = list.get(position);
 
             holder.name.setText(item.getProductName());
-            holder.price.setText("Rs. " + item.getPrice());
+            holder.price.setText("INR. " + item.getPrice());
 
             holder.up.setOnClickListener(new View.OnClickListener() {
                 @Override

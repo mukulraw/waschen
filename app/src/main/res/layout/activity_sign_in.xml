@@ -219,7 +219,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create an account"
+            android:text="CREATE AN ACCOUNT"
             android:textColor="#ffffff"
             android:id="@+id/create"
             android:gravity="center_vertical"
@@ -232,6 +232,8 @@
             android:background="#ffffff"
             android:layout_marginStart="135dp"
             android:layout_marginEnd="135dp"/>
+
+
     </LinearLayout>
 
     </RelativeLayout>

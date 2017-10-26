@@ -23,7 +23,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="4.5"
+            android:layout_weight="3.5"
             android:orientation="horizontal">
 
 
@@ -39,13 +39,15 @@
                 android:textColor="#ffffff"
                 android:layout_gravity="center_vertical"
                 android:gravity="center"/>
+
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="3"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
 
@@ -58,14 +60,15 @@
                 android:textSize="10sp"
                 android:textColor="#ffffff"
                 android:textAllCaps="true"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"/>
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2.5"
+            android:layout_weight="3.5"
             android:orientation="horizontal">
 
 
@@ -78,12 +81,14 @@
                 android:id="@+id/price"
                 android:textSize="10sp"
                 android:textColor="#ffffff"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"/>
+                android:layout_gravity="center_horizontal"
+                />
+
         </LinearLayout>
 
-
     </LinearLayout>
+
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -474,10 +474,6 @@ public class CreateAccount extends AppCompatActivity implements GoogleApiClient.
                     Toast.makeText(CreateAccount.this , "Please Enter a Valid Username" , Toast.LENGTH_SHORT).show();
                 }
 
-
-
-
-
             }
         });
 
