@@ -31,153 +31,17 @@
 
     </RelativeLayout>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="10dp"
-        android:layout_gravity="center_vertical"
-        android:gravity="center"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp">
+<android.support.design.widget.TabLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:tabMode="fixed"
+    app:tabGravity="center"
+    android:layout_gravity="fill"
+    android:id="@+id/tabs">
+</android.support.design.widget.TabLayout>
 
 
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginEnd="5dp"
-            >
-
-
-            <Button
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:textColor="#ffffff"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:background="@drawable/black_btn_round"
-                android:text="1"
-                android:textSize="15dp"
-                />
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Billing"
-                android:layout_marginStart="5dp"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            >
-
-
-            <Button
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:textColor="#ffffff"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:background="@drawable/cdcdcd_round_btn"
-                android:text="2"
-                android:textSize="15dp"
-                />
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Shipping"
-                android:layout_marginStart="5dp"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            >
-
-
-            <Button
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:textColor="#ffffff"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:background="@drawable/cdcdcd_round_btn"
-                android:text="3"
-                android:textSize="15dp"
-                />
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Payment"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginEnd="5dp"
-            android:layout_marginStart="5dp"
-            >
-
-
-            <Button
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:textColor="#ffffff"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:background="@drawable/cdcdcd_round_btn"
-                android:text="4"
-                android:textSize="15dp"
-                />
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Done!"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
-
-        </LinearLayout>
-    </LinearLayout>
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"

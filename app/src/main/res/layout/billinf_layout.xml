@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,12 +8,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick Up Address"
+            android:padding="18dp"
+            android:paddingStart="30dp"
+            android:textColor="#ffffff"
+            android:background="#3e3d3d"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#f5f2f2"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="18dp">
 
         <LinearLayout
@@ -30,11 +43,13 @@
                 android:orientation="vertical">
 
 
-                <TextView
+                <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mukul Rawat"
                     android:textSize="15dp"
+                    android:id="@+id/name"
+                    android:background="#f5f2f2"
                     android:textStyle="bold" />
 
                 <TextView
@@ -54,29 +69,11 @@
                 android:orientation="vertical">
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:text="EDIT INFO"
-                    android:id="@+id/edit"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="40dp"
-                    android:background="#000" />
             </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:text="Mr.Mukul Rawat"
-            android:textColor="#403e3e"
-            />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,6 +89,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1">
 
             <TextView
@@ -109,7 +107,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="0.2">
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -127,12 +126,84 @@
                 android:orientation="horizontal"
                 android:layout_weight="2">
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter email"
+                    android:textColor="#403e3e"
+                    android:id="@+id/email"
+                    android:inputType="textEmailAddress"
+                    android:textSize="12sp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="18dp"
+            >
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="nisha@technobrix.com"
+                    android:text="Contact"
+                    android:textStyle="bold"
                     android:textColor="#403e3e"
-                    android:id="@+id/email"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textStyle="bold"
+                    android:textColor="#403e3e"
+
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="contact"
+                    android:id="@+id/contact"
+                    android:textColor="#403e3e"
+                    android:inputType="phone"
+
+                    android:textSize="12sp"
                     />
 
             </LinearLayout>
@@ -153,6 +224,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1">
 
                 <TextView
@@ -170,7 +242,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="0.2">
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -188,13 +261,14 @@
                 android:orientation="horizontal"
                 android:layout_weight="2">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Friends Colony"
-                    android:textColor="#403e3e"
+                <EditText
                     android:id="@+id/address"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Enter Address"
+                    android:inputType="textPostalAddress"
+                    android:textColor="#403e3e"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -214,12 +288,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="City"
+                    android:layout_gravity="center_vertical"
                     android:textStyle="bold"
                     android:textColor="#403e3e"
 
@@ -231,7 +307,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="0.2">
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -247,15 +324,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="2">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Delhi"
+                <EditText
                     android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:hint="Enter City"
+                    android:inputType="text"
                     android:textColor="#403e3e"
-                    />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -275,6 +354,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1">
 
                 <TextView
@@ -292,7 +372,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="0.2">
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -308,74 +389,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="2">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Delhi"
+                    android:hint="Enter State"
                     android:id="@+id/state"
-                    android:textColor="#403e3e"
-                    />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="18dp">
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pincode"
-                    android:textStyle="bold"
-                    android:textColor="#403e3e"
-
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="0.2">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=":"
-                    android:textStyle="bold"
-                    android:textColor="#403e3e"
-
-                    />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="110062"
-                    android:id="@+id/pincode"
+                    android:inputType="text"
+                    android:textSize="12sp"
                     android:textColor="#403e3e"
                     />
 
@@ -398,12 +420,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contact"
+                    android:text="Zipcode"
                     android:textStyle="bold"
                     android:textColor="#403e3e"
 
@@ -415,7 +438,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="0.2">
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -431,73 +455,114 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <Spinner
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="7678119291"
-                    android:id="@+id/contact"
+                    android:hint="Enter Pincode"
+                    android:id="@+id/pincode"
+                    android:inputType="number"
                     android:textColor="#403e3e"
+                    android:textSize="12sp"
                     />
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="18dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="1"
-            android:layout_marginEnd="0.3dp">
-            <TextView
+            android:weightSum="3"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="10dp">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Country"
+                    android:textStyle="bold"
+                    android:textColor="#403e3e"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textStyle="bold"
+                    android:textColor="#403e3e"
+
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Country"
+                    android:id="@+id/country"
+                    android:inputType="text"
+                    android:textColor="#403e3e"
+                    android:textSize="12sp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+            <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:textColor="#000"
                 android:id="@+id/shipadd"
                 android:textSize="12sp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
                 android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:background="@drawable/black_kam_stroke"
-                android:text="Ship to this address"/>
+                android:gravity="center_vertical"
+                android:text="Drop to this address"/>
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1"
-            android:layout_marginStart="0.3dp"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:background="@drawable/black_kam_stroke"
-                android:layout_gravity="center_vertical"
-                android:textSize="12sp"
-                android:gravity="center"
-                android:padding="5dp"
-                android:id="@+id/shipdiff"
-                android:text="Ship to different address"/>
 
-        </LinearLayout>
-    </LinearLayout>
+</LinearLayout>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -508,5 +573,18 @@
         android:gravity="center"
         android:textSize="20sp"
         android:text="Continue"
-        android:padding="18dp" android:background="@color/colorPrimary"/>
-</LinearLayout>
+        android:padding="18dp"
+        android:id="@+id/cont"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"/>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

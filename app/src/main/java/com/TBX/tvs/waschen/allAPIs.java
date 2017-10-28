@@ -8,6 +8,7 @@ import com.TBX.tvs.waschen.ContactusPOJO.ContactBean;
 import com.TBX.tvs.waschen.CreatePOJO.CreateBean;
 import com.TBX.tvs.waschen.FaqPOJO.FaqBean;
 import com.TBX.tvs.waschen.GetBucketPOJO.GetBean;
+import com.TBX.tvs.waschen.GetZipPOJO.GetZipBean;
 import com.TBX.tvs.waschen.LoginPOJO.LoginBean;
 import com.TBX.tvs.waschen.OrderDetailPOJO.DetailBean;
 import com.TBX.tvs.waschen.OrderPojo.OrderBean;
@@ -17,6 +18,7 @@ import com.TBX.tvs.waschen.ServicesPOJO.ServiceBean;
 import com.TBX.tvs.waschen.SocialPOJO.SocialBean;
 import com.TBX.tvs.waschen.SubmitPOJO.SubmitBean;
 import com.TBX.tvs.waschen.UpdatePOJO.UpdateBean;
+import com.TBX.tvs.waschen.UpdateProfilePOJO.UpdateProfileBean;
 import com.TBX.tvs.waschen.UploadImagePOJO.UploadBean;
 import com.TBX.tvs.waschen.ViewProfilePOJO.ViewBean;
 
@@ -41,6 +43,11 @@ public interface allAPIs {
 
     @GET("waschen_api/services_list.php")
     Call<ServiceBean> service (
+
+    );
+
+    @GET("waschen_api/getZip.php")
+    Call<GetZipBean> bean (
 
     );
 
@@ -198,5 +205,21 @@ public interface allAPIs {
 
     @GET("waschen_api/bucket_count.php")
     Call<BucketCountBean> getBucketCount ();
+
+
+
+    @Multipart
+    @POST("waschen_api/update_profile.php")
+    Call<UpdateProfileBean> updateprofile (
+            @Part("userId") String id ,
+            @Part("name") String n ,
+            @Part("phone") String p ,
+            @Part("address") String a ,
+            @Part("city") String c ,
+            @Part("zip") String z ,
+            @Part("country") String country
+
+    );
+
 
 }

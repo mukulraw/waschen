@@ -28,7 +28,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ProfileFrag extends Fragment {
 
-    TextView name,mobile,email,address,zip;
+    TextView name,mobile,email,address, state , city , zip , country;
 
     ProgressBar bar;
 
@@ -49,6 +49,9 @@ public class ProfileFrag extends Fragment {
         address = (TextView) view.findViewById(R.id.address);
         bar = (ProgressBar) view.findViewById(R.id.progress);
         zip = (TextView) view.findViewById(R.id.zip);
+        state = (TextView) view.findViewById(R.id.state);
+        city = (TextView) view.findViewById(R.id.city);
+        country = (TextView) view.findViewById(R.id.country);
 
         bar.setVisibility(View.VISIBLE);
         Bean b = (Bean) getContext().getApplicationContext();
@@ -71,13 +74,16 @@ public class ProfileFrag extends Fragment {
 
                 Toast.makeText(b, response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
-                Log.d("dsgsdf", response.body().getData().getUsername());
+                Log.d("dsgsdf", response.body().getData().getUserName());
 
-                name.setText(response.body().getData().getUsername());
+                name.setText(response.body().getData().getUserName());
                 mobile.setText(response.body().getData().getPhone());
                 email.setText(response.body().getData().getEmail());
                 address.setText(response.body().getData().getAddress());
-                zip.setText(response.body().getData().getZip());
+                zip.setText(response.body().getData().getZipcode());
+                state.setText(response.body().getData().getState());
+                country.setText(response.body().getData().getCountry());
+                city.setText(response.body().getData().getCity());
 
                 bar.setVisibility(View.GONE);
 
@@ -87,7 +93,6 @@ public class ProfileFrag extends Fragment {
             public void onFailure(Call<ViewBean> call, Throwable t) {
 
                 bar.setVisibility(View.GONE);
-
 
             }
         });

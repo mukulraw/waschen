@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        pref = getSharedPreferences("mypref" , MODE_PRIVATE);
+        pref = getSharedPreferences("pref" , MODE_PRIVATE);
         edit = pref.edit();
 
 
@@ -198,7 +198,6 @@ public class MainActivity extends AppCompatActivity {
                 bar.setVisibility(View.GONE);
             }
         });
-
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -359,8 +358,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this , SignIn.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                edit.remove("user");
-                edit.remove("type");
+                edit.remove("email");
+                //edit.remove("type");
                 edit.remove("pass");
                 edit.apply();
 

@@ -109,6 +109,8 @@ public class BucketFragment extends Fragment {
 
                 adapter.setgrid(response.body().getData());
 
+
+
                 bar.setVisibility(View.GONE);
 
             }
@@ -153,7 +155,7 @@ public class BucketFragment extends Fragment {
             final Datum item = list.get(position);
 
             holder.name.setText(item.getProductName());
-            holder.price.setText("INR. " + item.getPrice());
+            holder.price.setText("INR " + item.getPrice());
 
             holder.up.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -206,7 +208,7 @@ public class BucketFragment extends Fragment {
                             .build();
 
                     allAPIs cr = retrofit.create(allAPIs.class);
-                    Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString() , holder.price.getText().toString());
+                    Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString() , item.getPrice());
                     call.enqueue(new Callback<AddBean>() {
                         @Override
                         public void onResponse(Call<AddBean> call, Response<AddBean> response) {

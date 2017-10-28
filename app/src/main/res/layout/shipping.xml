@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="match_parent"
+    android:paddingBottom="60dp"
     android:layout_height="match_parent">
 
 
@@ -11,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Shipping Address"
+        android:text="Drop Address"
         android:padding="18dp"
         android:paddingStart="30dp"
         android:textColor="#ffffff"
@@ -50,12 +54,13 @@
         android:layout_marginStart="5dp"
         >
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Last Name"
+            android:padding="5dp"
             />
+
     </LinearLayout>
 </LinearLayout>
 
@@ -76,12 +81,14 @@
             >
 
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/fn"
+                android:padding="5dp"
+                android:inputType="text"
                 android:background="@drawable/black_kam_stroke"
-                android:padding="5dp"/>
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -92,10 +99,11 @@
             android:layout_marginStart="5dp">
 
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ln"
+                android:inputType="text"
                 android:background="@drawable/black_kam_stroke"
                 android:padding="5dp"/>
         </LinearLayout>
@@ -113,12 +121,13 @@
         />
 
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/black_kam_stroke"
         android:padding="5dp"
         android:id="@+id/cn"
+        android:inputType="number"
         android:layout_marginBottom="10dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"/>
@@ -133,12 +142,13 @@
         />
 
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/black_kam_stroke"
         android:padding="5dp"
         android:id="@+id/add"
+        android:inputType="text"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"/>
 
@@ -180,6 +190,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="State"
+                android:padding="5dp"
                 />
         </LinearLayout>
     </LinearLayout>
@@ -201,12 +212,14 @@
             >
 
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/city"
+                android:inputType="text"
                 android:background="@drawable/black_kam_stroke"
                 android:padding="5dp"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -217,10 +230,11 @@
             android:layout_marginStart="5dp">
 
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/state"
+                android:inputType="text"
                 android:background="@drawable/black_kam_stroke"
                 android:padding="5dp"/>
         </LinearLayout>
@@ -247,7 +261,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Pincode" />
+                android:text="Zipcode" />
         </LinearLayout>
 
         <LinearLayout
@@ -263,6 +277,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Country"
+                android:padding="5dp"
                 />
         </LinearLayout>
     </LinearLayout>
@@ -277,19 +292,22 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
             android:layout_marginEnd="5dp"
             >
 
 
-            <TextView
+            <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/pc"
+                android:gravity="center_vertical"
+                android:inputType="number"
                 android:background="@drawable/black_kam_stroke"
                 android:padding="5dp"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -300,114 +318,42 @@
             android:layout_marginStart="5dp">
 
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/black_kam_stroke"
                 android:padding="5dp"
+                android:inputType="text"
                 android:id="@+id/c"/>
+
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    </LinearLayout>
+</ScrollView>
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp">
+        android:padding="10dp"
+        android:text="Continue"
+        android:id="@+id/cont"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="18dp"
+        android:background="@color/colorPrimary"
+        />
 
-    <CheckBox
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:id="@+id/progress"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:textColor="#4e4d4d"
-        android:text="Use Billing address"/>
 
-        </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="18dp"
-        android:background="#000"
-        android:textColor="#ffffff"
-        android:paddingStart="40dp"
-        android:layout_marginBottom="10dp"
-        android:text="Delivery Method"
-        />
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:background="@drawable/cdcdcd_kam_stroke">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:layout_gravity="center_vertical"
-                android:textColor="#4e4d4d"
-                android:text="Standard Delivery(1 Day)"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:layout_gravity="center_vertical"
-                android:textColor="#4e4d4d"
-                android:text="Express Delivery(8 Hours) Charged Rs 50"/>
-
-        </LinearLayout>
-</LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="18dp"
-            android:text="Continue"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="#ffffff"
-            android:layout_marginTop="18dp"
-            android:background="@color/colorPrimary"
-           />
-    </LinearLayout>
-    </ScrollView>
+    </RelativeLayout>

@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     >
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/water"
-        android:scaleType="centerCrop"
+        android:src="@drawable/lll"
+
         />
 
 <LinearLayout
@@ -22,6 +23,7 @@
         android:layout_height="wrap_content"
         android:textSize="35sp"
         android:textColor="#000"
+        android:visibility="gone"
         android:layout_marginTop="300dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
@@ -32,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:visibility="gone"
         android:gravity="center"
         android:text="Lorem Ipsum is simply dummy text of the
  typesetting industry."

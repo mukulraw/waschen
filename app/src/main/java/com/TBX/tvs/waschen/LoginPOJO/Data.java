@@ -18,6 +18,9 @@ public class Data {
     @SerializedName("phone")
     @Expose
     private String phone;
+    @SerializedName("cartId")
+    @Expose
+    private String cartId;
     @SerializedName("password")
     @Expose
     private String password;
@@ -57,6 +60,14 @@ public class Data {
         this.phone = phone;
     }
 
+    public String getCartId() {
+        return cartId;
+    }
+
+    public void setCartId(String cartId) {
+        this.cartId = cartId;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -72,4 +83,5 @@ public class Data {
     public void setImage(String image) {
         this.image = image;
     }
+
 }

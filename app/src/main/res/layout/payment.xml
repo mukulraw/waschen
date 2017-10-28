@@ -13,21 +13,35 @@
         android:layout_height="wrap_content"
         android:text="Coupon Code"
         android:padding="18dp"
-        android:paddingStart="40dp"
+        android:paddingStart="20dp"
         android:textColor="#ffffff"
         android:background="#454343"/>
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enter a Coupon code"
-        android:padding="18dp"
-        android:paddingStart="40dp"
-        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:id="@+id/code"
+        android:textSize="15sp"
+        android:textAllCaps="true"
+        android:paddingStart="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/cdcdcd_kam_stroke"
-        android:layout_marginBottom="15dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"/>
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/redeem"
+            android:text="REDEEM"
+            android:textColor="#ffffff"
+            android:background="@drawable/black_strokee"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"/>
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -45,9 +59,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cart Total"
-        android:padding="18dp"
-        android:paddingStart="40dp"
+        android:text="Bucket Total"
+        android:padding="15dp"
+        android:paddingStart="20dp"
         android:textColor="#ffffff"
         android:background="#454343"/>
 
@@ -60,9 +74,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rs.1200.00"
-            android:padding="18dp"
-            android:layout_marginStart="40dp"
+            android:text="INR 1200.00"
+            android:padding="15dp"
+            android:layout_marginStart="20dp"
             android:paddingStart="40dp"
             android:textColor="#ffffff"
             android:background="#454343"/>
@@ -74,10 +88,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:layout_marginTop="15dp"
-    android:layout_marginBottom="15dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
     android:background="@drawable/cdcdcd_kam_stroke">
 
 
@@ -97,9 +111,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="subtotal"
+                android:text="Sub Total"
                 android:textColor="#484646"
-                android:paddingStart="40dp"
+                android:paddingStart="10dp"
                 />
 
         </LinearLayout>
@@ -107,13 +121,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rs.1200.00"
-                android:layout_marginStart="40dp"
-                android:paddingStart="40dp"
+                android:text="INR 1200.00"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:layout_marginStart="18dp"
+                android:paddingStart="20dp"
                 android:textColor="#484646"
 
                 />
@@ -141,7 +158,7 @@
             android:textColor="#484646"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="40dp"
+            android:paddingStart="10dp"
             android:text="GST(12%)" />
 
     </LinearLayout>
@@ -149,14 +166,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginEnd="10dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+ Rs.150.00"
+            android:text="+ INR 150.00"
+            android:layout_gravity="end"
+            android:gravity="end"
             android:textColor="#484646"
-            android:layout_marginStart="40dp"
-            android:paddingStart="40dp"
+            android:layout_marginStart="10dp"
+            android:paddingStart="10dp"
             />
 
     </LinearLayout>
@@ -172,7 +192,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:padding="15dp"
+        android:padding="5dp"
         >
 
         <LinearLayout
@@ -185,9 +205,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="GrandTotal"
+                android:text="Grand Total"
                 android:textColor="#484646"
-                android:paddingStart="30dp"
+                android:paddingStart="10dp"
                 />
 
         </LinearLayout>
@@ -198,17 +218,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1">
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-               android:paddingStart="40dp"
+                android:layout_marginStart="10dp"
+               android:paddingStart="10dp"
                 android:textColor="#484646"
-
-                android:text="Rs.1350.00" />
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:text="INR 1350.00" />
 
         </LinearLayout>
     </LinearLayout>
@@ -218,102 +240,101 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Payment Option"
-        android:padding="18dp"
-        android:paddingStart="40dp"
+        android:padding="15dp"
+        android:paddingStart="20dp"
         android:textColor="#ffffff"
         android:background="#454343"/>
 
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/radio"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dps"
+    android:background="@drawable/cdcdcd_kam_stroke">
 
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="horizontal"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/cdcdcd_kam_stroke"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:layout_gravity="center_vertical"
-                android:textColor="#4e4d4d"
-                android:text="COD"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/cdcdcd_kam_stroke"
-            android:orientation="horizontal">
 
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                />
-
-            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="#4e4d4d"
-                android:text="Payu Money"/>
+                android:text="COD"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                />
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/cdcdcd_kam_stroke"
-            android:orientation="horizontal">
 
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                />
-
-            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="#4e4d4d"
-                android:text="CC Avenue"/>
+                android:text="Payu Money"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp"
+                />
 
-        </LinearLayout>
+
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="CC Avenue"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+
+                />
+
+
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="Wallet"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+
+        />
+
+
+
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="Subscription"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+
+        />
+
+
+
+
+</RadioGroup>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#000"
             android:textSize="20sp"
-            android:padding="18dp"
+            android:padding="10dp"
             android:layout_marginTop="2dp"
             android:layout_gravity="center_vertical"
             android:gravity="center"
             android:text="Continue"
+            android:id="@+id/cont"
             android:textColor="#ffffff"/>
     </LinearLayout>
 

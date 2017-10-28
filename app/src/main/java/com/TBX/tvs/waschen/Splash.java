@@ -83,6 +83,7 @@ public class Splash extends AppCompatActivity {
 
                         Bean b = (Bean)getApplicationContext();
                         b.userid = response.body().getData().getUserId();
+                        b.cartid = response.body().getData().getCartId();
                         b.email = response.body().getData().getEmail();
                         b.name = response.body().getData().getUserName();
 

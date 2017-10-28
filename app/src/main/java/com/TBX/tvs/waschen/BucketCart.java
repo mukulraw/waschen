@@ -173,7 +173,7 @@ public class BucketCart extends AppCompatActivity {
                         Toast.makeText(BucketCart.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
                         adapter.Setgrid(response.body().getData());
-
+                        total.setText("INR "  +response.body().getTotalPrice());
                         bar.setVisibility(View.GONE);
 
                     }
@@ -209,6 +209,14 @@ public class BucketCart extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+
+loadData();
+
+    }
+
+
+    public void loadData()
+    {
         bar.setVisibility(View.VISIBLE);
 
         Bean b = (Bean)getApplicationContext();
@@ -222,8 +230,8 @@ public class BucketCart extends AppCompatActivity {
         allAPIs cr = retrofit.create(allAPIs.class);
         Call<GetBean> call = cr.get(b.userid ,b.cartid);
 
-    //    Log.d("nsdgnfsd" , b.userid);
-      //  Log.d("mukul" , b.cartid);
+        //    Log.d("nsdgnfsd" , b.userid);
+        //  Log.d("mukul" , b.cartid);
 
         call.enqueue(new Callback<GetBean>() {
             @Override
@@ -235,7 +243,7 @@ public class BucketCart extends AppCompatActivity {
 
                 bar.setVisibility(View.GONE);
 
-                total.setText("Rs. "  +response.body().getTotalPrice());
+                total.setText("INR "  +response.body().getTotalPrice());
 
             }
 
@@ -249,10 +257,7 @@ public class BucketCart extends AppCompatActivity {
             }
         });
 
-
-
     }
-
 
 
     public  class BucketAdapter extends RecyclerView.Adapter<BucketAdapter.MyViewHolder> {
@@ -277,7 +282,7 @@ public class BucketCart extends AppCompatActivity {
             final Datum item = list.get(position);
 
             holder.name.setText(item.getProductName());
-            holder.price.setText("INR. " + item.getUnitprice());
+            holder.price.setText("INR " + item.getUnitprice());
 
             holder.quantity.setText(item.getQuantity());
 
@@ -307,7 +312,7 @@ public class BucketCart extends AppCompatActivity {
                             .build();
 
                     allAPIs cr = retrofit.create(allAPIs.class);
-                    Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString() , holder.price.getText().toString());
+                    Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString() , item.getUnitprice());
                     call.enqueue(new Callback<AddBean>() {
                         @Override
                         public void onResponse(Call<AddBean> call, Response<AddBean> response) {
@@ -320,12 +325,7 @@ public class BucketCart extends AppCompatActivity {
 
                             b.cartid = response.body().getCartid();
 
-                            String cou = response.body().getBucketCount();
-
-                            int count = Integer.parseInt(cou);
-
-
-
+                            loadData();
 
 
 
@@ -373,7 +373,7 @@ public class BucketCart extends AppCompatActivity {
                             .build();
 
                     allAPIs cr = retrofit.create(allAPIs.class);
-                    Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString() , holder.price.getText().toString());
+                    Call<AddBean> call = cr.add(b.userid , item.getProductId() , holder.quantity.getText().toString() , item.getUnitprice());
                     call.enqueue(new Callback<AddBean>() {
                         @Override
                         public void onResponse(Call<AddBean> call, Response<AddBean> response) {
@@ -386,10 +386,7 @@ public class BucketCart extends AppCompatActivity {
 
                             b.cartid = response.body().getCartid();
 
-                            String cou = response.body().getBucketCount();
-
-                            int count = Integer.parseInt(cou);
-
+                           loadData();
 
 
 
@@ -434,7 +431,7 @@ public class BucketCart extends AppCompatActivity {
                             Toast.makeText(BucketCart.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             bar.setVisibility(View.GONE);
 
-                            adapter.Setgrid(response.body().getData());
+                            loadData();
                         }
 
                         @Override
