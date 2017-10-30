@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,20 +21,21 @@
         android:textColor="#ffffff"
         android:background="#454343"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Enter a Coupon code"
-        android:padding="15dp"
-        android:id="@+id/code"
-        android:textSize="15sp"
-        android:textAllCaps="true"
-        android:paddingStart="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/cdcdcd_kam_stroke"
-        android:layout_marginBottom="5dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/code"
+            android:padding="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Enter a Coupon Code"
+            android:background="@drawable/cdcdcd_kam_stroke"
+            android:textSize="15sp"
+           />
+
+
 
         <Button
             android:layout_width="wrap_content"
@@ -76,6 +81,9 @@
             android:layout_height="wrap_content"
             android:text="INR 1200.00"
             android:padding="15dp"
+            android:id="@+id/bucket"
+            android:layout_gravity="end"
+            android:gravity="end"
             android:layout_marginStart="20dp"
             android:paddingStart="40dp"
             android:textColor="#ffffff"
@@ -129,6 +137,52 @@
                 android:text="INR 1200.00"
                 android:layout_gravity="end"
                 android:gravity="end"
+                android:id="@+id/subtotal"
+                android:layout_marginStart="18dp"
+                android:paddingStart="20dp"
+                android:textColor="#484646"
+
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delivery Price"
+                android:textColor="#484646"
+                android:paddingStart="10dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INR 100.00"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:id="@+id/delivery"
                 android:layout_marginStart="18dp"
                 android:paddingStart="20dp"
                 android:textColor="#484646"
@@ -159,7 +213,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
-            android:text="GST(12%)" />
+            android:text="GST(18%)" />
 
     </LinearLayout>
     <LinearLayout
@@ -174,6 +228,7 @@
             android:text="+ INR 150.00"
             android:layout_gravity="end"
             android:gravity="end"
+            android:id="@+id/gst"
             android:textColor="#484646"
             android:layout_marginStart="10dp"
             android:paddingStart="10dp"
@@ -222,7 +277,7 @@
             android:layout_weight="1">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/grand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -245,84 +300,74 @@
         android:textColor="#ffffff"
         android:background="#454343"/>
 
-<RadioGroup
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/radio"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dps"
-    android:background="@drawable/cdcdcd_kam_stroke">
-
-
-
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="COD"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                />
-
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/cdcdcd_kam_stroke">
 
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Payu Money"
-                android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
+                android:text="Wallet"
+
                 />
 
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="COD" />
 
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Payu Money" />
+
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
                 android:text="CC Avenue"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
 
                 />
 
 
-    <RadioButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="Wallet"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Subscription"
 
-        />
-
-
-
-    <RadioButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="Subscription"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-
-        />
+                />
 
 
-
-
-</RadioGroup>
+        </RadioGroup>
 
         <TextView
             android:layout_width="match_parent"
@@ -339,3 +384,12 @@
     </LinearLayout>
 
 </ScrollView>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

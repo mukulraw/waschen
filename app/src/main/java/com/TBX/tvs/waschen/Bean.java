@@ -39,6 +39,7 @@ public class Bean extends Application {
     public  String gst_tax = "";
     public  String grand_total = "";
     public  String picupdate = "";
+    public  String order_id= "";
 
 
 

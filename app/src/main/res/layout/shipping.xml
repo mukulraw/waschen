@@ -85,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/fn"
+                android:hint="First Name"
                 android:padding="5dp"
                 android:inputType="text"
                 android:background="@drawable/black_kam_stroke"
@@ -103,6 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ln"
+                android:hint="Last Name"
                 android:inputType="text"
                 android:background="@drawable/black_kam_stroke"
                 android:padding="5dp"/>
@@ -128,6 +130,7 @@
         android:padding="5dp"
         android:id="@+id/cn"
         android:inputType="number"
+        android:hint="Contact"
         android:layout_marginBottom="10dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"/>
@@ -148,6 +151,7 @@
         android:background="@drawable/black_kam_stroke"
         android:padding="5dp"
         android:id="@+id/add"
+        android:hint="Address"
         android:inputType="text"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"/>
@@ -216,6 +220,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/city"
+                android:hint="City"
                 android:inputType="text"
                 android:background="@drawable/black_kam_stroke"
                 android:padding="5dp"/>
@@ -234,6 +239,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/state"
+                android:hint="State"
                 android:inputType="text"
                 android:background="@drawable/black_kam_stroke"
                 android:padding="5dp"/>
@@ -323,6 +329,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/black_kam_stroke"
                 android:padding="5dp"
+                android:hint="Country"
                 android:inputType="text"
                 android:id="@+id/c"/>
 

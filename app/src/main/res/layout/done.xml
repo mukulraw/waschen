@@ -31,12 +31,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DOR USING WASCHEN"
+        android:text="FOR USING WASCHEN"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:textSize="25sp"
         android:textColor="#000"
         android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"/>
 
     <TextView
@@ -45,23 +46,24 @@
         android:text="your order number is:32501562"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:padding="10dp"
+        android:textStyle="bold"
+        android:id="@+id/order"
+        android:padding="5dp"
         android:textColor="#585757"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"/>
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lorem Ipsum is simply dummy text of the printing
-                     and typesetting industry."
-        android:padding="10dp"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         android:textColor="#585757"
+        android:gravity="center_horizontal"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"/>
 
 
@@ -70,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Continue browsing"
-        android:padding="18dp"
+        android:padding="15dp"
         android:gravity="center"
         android:textSize="20sp"
         android:background="#000"

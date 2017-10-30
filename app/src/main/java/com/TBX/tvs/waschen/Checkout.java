@@ -14,21 +14,37 @@ import android.view.View;
 public class Checkout extends AppCompatActivity {
 
     Toolbar toolbar;
-    ViewPager pager;
+    CustomViewPager pager;
     PagerAdapter paadapter;
     TabLayout tabs;
+
+    String total;
+    String date;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+
+
+        total = getIntent().getStringExtra("total");
+        date = getIntent().getStringExtra("date");
+
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        pager = (ViewPager) findViewById(R.id.pager);
+
+        pager = (CustomViewPager) findViewById(R.id.pager);
+
+        pager.setPagingEnabled(false);
+
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setNavigationIcon(R.drawable.arrow);
 
         tabs = (TabLayout) findViewById(R.id.tabs);
+
         paadapter = new PagerAdapter(getSupportFragmentManager(), 4);
 
 
@@ -54,7 +70,6 @@ public class Checkout extends AppCompatActivity {
     }
 
 
-
     public class PagerAdapter extends FragmentStatePagerAdapter {
 
         public PagerAdapter(FragmentManager fm , int tab) {
@@ -73,7 +88,14 @@ public class Checkout extends AppCompatActivity {
             }
             if (position == 2)
             {
-                return new Payment();
+
+                Payment payment = new Payment();
+                Bundle b = new Bundle();
+                b.putString("total" , total);
+                b.putString("date" , date);
+                payment.setArguments(b);
+
+                return payment;
             }
             else if (position == 3)
             {

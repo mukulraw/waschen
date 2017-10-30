@@ -95,6 +95,8 @@ public class BucketCart extends AppCompatActivity {
                 if (date1.length()>0)
                 {
                     Intent i = new Intent(BucketCart.this , Checkout.class);
+                    i.putExtra("total" , total.getText().toString());
+                    i.putExtra("date" , date1);
                     startActivity(i);
                 }
                 else
@@ -173,7 +175,7 @@ public class BucketCart extends AppCompatActivity {
                         Toast.makeText(BucketCart.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
                         adapter.Setgrid(response.body().getData());
-                        total.setText("INR "  +response.body().getTotalPrice());
+                        total.setText(response.body().getTotalPrice());
                         bar.setVisibility(View.GONE);
 
                     }
@@ -243,7 +245,7 @@ loadData();
 
                 bar.setVisibility(View.GONE);
 
-                total.setText("INR "  +response.body().getTotalPrice());
+                total.setText(response.body().getTotalPrice());
 
             }
 
@@ -282,7 +284,7 @@ loadData();
             final Datum item = list.get(position);
 
             holder.name.setText(item.getProductName());
-            holder.price.setText("INR " + item.getUnitprice());
+            holder.price.setText(item.getUnitprice());
 
             holder.quantity.setText(item.getQuantity());
 

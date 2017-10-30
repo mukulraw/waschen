@@ -69,7 +69,8 @@
         <activity
             android:name=".ViewMore"
             android:screenOrientation="portrait" />
-        <activity android:name=".Edit"></activity>
+        <activity android:name=".Edit" />
+        <activity android:name=".ProfileEdit"></activity>
     </application>
 
 </manifest>

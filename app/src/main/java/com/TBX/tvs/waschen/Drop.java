@@ -157,8 +157,6 @@ public class Drop extends Fragment {
                 final String coun = country.getText().toString();
 
 
-
-
                 final Dialog dialog = new Dialog(getActivity());
                 dialog.setContentView(R.layout.continue_dialog);
                 dialog.setCancelable(true);
@@ -170,9 +168,6 @@ public class Drop extends Fragment {
                 ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
-
-
 
                         if (f.length()>0)
                         {

@@ -11,13 +11,13 @@ public class CashBean {
 
     @SerializedName("order_id")
     @Expose
-    private String orderId;
+    private Integer orderId;
 
-    public String getOrderId() {
+    public Integer getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(String orderId) {
+    public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
 

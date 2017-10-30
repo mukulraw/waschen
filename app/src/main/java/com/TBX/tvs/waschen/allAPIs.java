@@ -2,13 +2,16 @@ package com.TBX.tvs.waschen;
 
 import com.TBX.tvs.waschen.AddBucketPOJO.AddBean;
 import com.TBX.tvs.waschen.BucketCountPOJO.BucketCountBean;
+import com.TBX.tvs.waschen.CashPOJO.CashBean;
 import com.TBX.tvs.waschen.CheckoutPOJO.CheckBean;
 import com.TBX.tvs.waschen.ClearPOJO.ClearBean;
 import com.TBX.tvs.waschen.ContactusPOJO.ContactBean;
+import com.TBX.tvs.waschen.CouponPOJO.CouponBean;
 import com.TBX.tvs.waschen.CreatePOJO.CreateBean;
 import com.TBX.tvs.waschen.FaqPOJO.FaqBean;
 import com.TBX.tvs.waschen.GetBucketPOJO.GetBean;
 import com.TBX.tvs.waschen.GetZipPOJO.GetZipBean;
+import com.TBX.tvs.waschen.GrandTotalPOJO.GrandBean;
 import com.TBX.tvs.waschen.LoginPOJO.LoginBean;
 import com.TBX.tvs.waschen.OrderDetailPOJO.DetailBean;
 import com.TBX.tvs.waschen.OrderPojo.OrderBean;
@@ -220,6 +223,60 @@ public interface allAPIs {
             @Part("country") String country
 
     );
+
+
+    @Multipart
+    @POST("waschen_api/coupon_value.php")
+    Call<CouponBean> coupon (
+            @Part("coupon_code") String id ,
+            @Part("userid") String e ,
+            @Part("cartid") String p
+    );
+
+
+    @Multipart
+    @POST("waschen_api/grandtotal_list.php")
+    Call<GrandBean> grand (
+            @Part("coupon_price") String id ,
+            @Part("userid") String u ,
+            @Part("cartid") String c ,
+            @Part("delivery_price") String d
+    );
+
+
+
+    @Multipart
+    @POST("waschen_api/cashondelivery.php")
+    Call<CashBean> cash (
+            @Part("userId") String id ,
+            @Part("cartid") String n ,
+            @Part("billname") String p ,
+            @Part("billemail") String a ,
+            @Part("billaddress") String c ,
+            @Part("billcity") String city ,
+            @Part("billstate") String s,
+            @Part("billzip") String z,
+            @Part("billphone") String phone,
+            @Part("shipfname") String fn,
+            @Part("shiplname") String ln,
+            @Part("shipphone") String sp,
+            @Part("shipaddress") String sa,
+            @Part("shipcity") String sci,
+            @Part("shipstate") String ss,
+            @Part("shipzip") String sz,
+            @Part("shipcountry") String sc,
+            @Part("dilivery_method") String d,
+            @Part("dilivery_price") String dp,
+            @Part("coupon_price") String cp,
+            @Part("cart_price") String cpr,
+            @Part("gst_tax") String gta,
+            @Part("grand_total") String gt,
+            @Part("date") String date
+
+    );
+
+
+
 
 
 }
