@@ -1,6 +1,7 @@
 package com.TBX.tvs.waschen;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,9 +38,13 @@ public class HistoryFrag extends Fragment{
 
 
     RecyclerView recyclerView;
+
     GridLayoutManager manager;
+
     HistoryAdapter adapter;
+
     ProgressBar bar;
+
     List<Datum>list;
 
     Toolbar toolbar;
@@ -58,10 +64,10 @@ public class HistoryFrag extends Fragment{
         bar = (ProgressBar)v.findViewById(R.id.progress);
 
         list = new ArrayList<>();
+
         adapter = new HistoryAdapter(getContext(),list);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(manager);
-
 
         return  v;
     }
@@ -94,7 +100,10 @@ public class HistoryFrag extends Fragment{
             @Override
             public void onResponse(Call<OrderBean> call, Response<OrderBean> response) {
 
+                Log.d("hlo" , "response");
+
                 Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
                 adapter.setgrid(response.body().getData());
 
                 bar.setVisibility(View.GONE);
@@ -107,9 +116,10 @@ public class HistoryFrag extends Fragment{
 
                 bar.setVisibility(View.GONE);
 
+                Log.d("hii" , t.toString());
+
             }
         });
-
 
     }
 
@@ -137,7 +147,7 @@ public class HistoryFrag extends Fragment{
         public void onBindViewHolder(MyViewHolder holder, int position) {
 
             Datum item = list.get(position);
-            holder.order.setText(item.getOrderId());
+            //holder.order.setText(item.getOrderId());
             holder.date.setText(item.getPlacedDate());
             holder.orderno.setText(item.getOrderId());
             holder.status.setText(item.getOrderStatus());
@@ -167,6 +177,16 @@ public class HistoryFrag extends Fragment{
                 orderno = (TextView) itemView.findViewById(R.id.phone);
                 date = (TextView) itemView.findViewById(R.id.date);
                 status = (TextView) itemView.findViewById(R.id.pending);
+
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+
+                        Intent i = new Intent(context , ViewMore.class);
+                        context.startActivity(i);
+                    }
+                });
             }
         }
     }

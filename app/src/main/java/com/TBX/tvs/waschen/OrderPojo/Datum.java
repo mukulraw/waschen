@@ -6,16 +6,16 @@ import com.google.gson.annotations.SerializedName;
 
 public class Datum  {
 
-    @SerializedName("userId")
+    @SerializedName("user_id")
     @Expose
     private String userId;
     @SerializedName("orderId")
     @Expose
     private String orderId;
-    @SerializedName("placedDate")
+    @SerializedName("placed_date")
     @Expose
     private String placedDate;
-    @SerializedName("orderStatus:")
+    @SerializedName("order_status")
     @Expose
     private String orderStatus;
 
@@ -50,5 +50,4 @@ public class Datum  {
     public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
     }
-
 }

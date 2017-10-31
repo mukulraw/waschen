@@ -17,25 +17,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/cdcdcd_white"
         android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profileedit"
+            android:layout_gravity="end"
+            android:id="@+id/edit"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:text="Name"
                 android:textColor="#000" />
@@ -43,8 +51,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:id="@+id/name"
                 android:background="@drawable/cdcdcd_white"
@@ -56,14 +64,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="5dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:text="Mobile No."
                 android:textColor="#000" />
@@ -71,8 +79,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:id="@+id/mobile"
                 android:background="@drawable/cdcdcd_white" />
@@ -84,14 +92,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:text="Email ID"
                 android:textColor="#000" />
@@ -99,8 +106,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:id="@+id/email"
                 android:background="@drawable/cdcdcd_white" />
@@ -112,14 +119,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:text="Address"
                 android:textColor="#000" />
@@ -127,8 +133,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:id="@+id/address"
                 android:background="@drawable/cdcdcd_white" />
@@ -141,14 +147,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:text="State"
                 android:textColor="#000" />
@@ -156,8 +161,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:id="@+id/state"
                 android:background="@drawable/cdcdcd_white" />
@@ -171,14 +176,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:text="City"
                 android:textColor="#000" />
@@ -186,8 +190,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:id="@+id/city"
                 android:background="@drawable/cdcdcd_white" />
@@ -206,8 +210,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:text="Zip Code"
                 android:textColor="#000" />
@@ -215,8 +219,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:id="@+id/zip"
                 android:background="@drawable/cdcdcd_white" />
@@ -230,14 +234,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:text="Country"
                 android:textColor="#000" />
@@ -245,8 +248,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:padding="5dp"
                 android:id="@+id/country"
                 android:layout_marginBottom="10dp"

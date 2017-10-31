@@ -8,23 +8,16 @@ import java.util.List;
 
 
 public class OrderBean {
-    @SerializedName("status")
-    @Expose
-    private String status;
+
     @SerializedName("message")
     @Expose
     private String message;
+    @SerializedName("status")
+    @Expose
+    private Integer status;
     @SerializedName("data")
     @Expose
     private List<Datum> data = null;
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public String getMessage() {
         return message;
@@ -32,6 +25,14 @@ public class OrderBean {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public List<Datum> getData() {

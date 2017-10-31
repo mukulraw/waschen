@@ -9,21 +9,21 @@ public class Data {
     @SerializedName("userId")
     @Expose
     private String userId;
-    @SerializedName("username")
+    @SerializedName("userName")
     @Expose
-    private String username;
+    private String userName;
     @SerializedName("email")
     @Expose
     private String email;
-    @SerializedName("address")
-    @Expose
-    private String address;
     @SerializedName("phone")
     @Expose
     private String phone;
-    @SerializedName("zip")
+    @SerializedName("address")
     @Expose
-    private String zip;
+    private String address;
+    @SerializedName("zipcode")
+    @Expose
+    private String zipcode;
     @SerializedName("image")
     @Expose
     private String image;
@@ -36,12 +36,12 @@ public class Data {
         this.userId = userId;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getEmail() {
@@ -52,14 +52,6 @@ public class Data {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -68,12 +60,20 @@ public class Data {
         this.phone = phone;
     }
 
-    public String getZip() {
-        return zip;
+    public String getAddress() {
+        return address;
     }
 
-    public void setZip(String zip) {
-        this.zip = zip;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 
     public String getImage() {

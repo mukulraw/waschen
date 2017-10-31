@@ -18,6 +18,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class ViewMore extends AppCompatActivity {
 
     TextView date , id  , address , zip ;
+
     LinearLayout linear;
 
     @Override

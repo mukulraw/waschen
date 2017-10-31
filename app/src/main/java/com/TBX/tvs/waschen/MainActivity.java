@@ -1,9 +1,17 @@
 package com.TBX.tvs.waschen;
 
+import android.content.ContentUris;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -26,8 +34,16 @@ import com.TBX.tvs.waschen.BucketCountPOJO.BucketCountBean;
 import com.TBX.tvs.waschen.GetBucketPOJO.GetBean;
 import com.TBX.tvs.waschen.LoginPOJO.LoginBean;
 import com.TBX.tvs.waschen.ServicesPOJO.ServiceBean;
+import com.TBX.tvs.waschen.UploadImagePOJO.UploadBean;
+import com.TBX.tvs.waschen.ViewProfilePOJO.ViewBean;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.io.File;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,7 +59,10 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences pref;
     SharedPreferences.Editor edit;
 
-    ImageView men;
+    ImageView men , round;
+
+    private final int PICK_IMAGE_REQUEST = 2;
+
     ProgressBar bar;
 
     LinearLayout hide;
@@ -59,22 +78,56 @@ public class MainActivity extends AppCompatActivity {
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         profile = (TextView) findViewById(R.id.profile);
+
         buck = (TextView) findViewById(R.id.Bucket);
+
         modus = (TextView) findViewById(R.id.modus);
+
         history = (TextView) findViewById(R.id.history);
+
         service = (TextView) findViewById(R.id.service);
+
         wallet = (TextView) findViewById(R.id.wallet);
+
         logout = (TextView) findViewById(R.id.logout);
+
         bar = (ProgressBar) findViewById(R.id.progress);
+
         faqs = (TextView) findViewById(R.id.faqs);
+
         contactus = (TextView) findViewById(R.id.contactus);
+
         drawer = (DrawerLayout) findViewById(R.id.activity_main);
 
-        men = (ImageView) findViewById(R.id.user);
+       // men = (ImageView) findViewById(R.id.user);
+
+
+
         name = (TextView) findViewById(R.id.name);
+
         email = (TextView) findViewById(R.id.email);
+
+        round = (ImageView) findViewById(R.id.round);
+
+        round.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(Intent.createChooser(intent, "Select File"), PICK_IMAGE_REQUEST);
+
+            }
+        });
+
+
+
+
         proceed = (TextView) findViewById(R.id.proceed);
+
         proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -236,6 +289,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        loadImage();
 
         modus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -379,7 +433,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         ImageLoader loader = ImageLoader.getInstance();
-        loader.displayImage(b.image , men);
+        loader.displayImage(b.image , round);
 
         name.setText(b.name);
         email.setText(b.email);
@@ -469,5 +523,222 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
+
+            Uri selectedImageUri = data.getData();
+
+
+            MultipartBody.Part body = null;
+
+
+            String mCurrentPhotoPath = getPath(MainActivity.this , selectedImageUri);
+
+            File file = new File(mCurrentPhotoPath);
+
+
+            RequestBody reqFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+
+            body = MultipartBody.Part.createFormData("backimg", file.getName(), reqFile);
+
+
+            bar.setVisibility(View.VISIBLE);
+
+
+            bar.setVisibility(View.VISIBLE);
+
+            Bean b = (Bean)getApplicationContext();
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(b.baseURL)
+                    .addConverterFactory(ScalarsConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            allAPIs cr = retrofit.create(allAPIs.class);
+            Call<UploadBean> call = cr.upload(b.userid ,body);
+
+            call.enqueue(new Callback<UploadBean>() {
+                @Override
+                public void onResponse(Call<UploadBean> call, Response<UploadBean> response) {
+
+
+
+                    bar.setVisibility(View.GONE);
+                    loadImage();
+
+
+                }
+
+                @Override
+                public void onFailure(Call<UploadBean> call, Throwable t) {
+
+                    bar.setVisibility(View.GONE);
+
+                }
+            });
+
+
+
+
+
+
+        }
+
+
+        else
+        {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+
+    }
+    public void loadImage()
+    {
+        bar.setVisibility(View.VISIBLE);
+
+        Bean b = (Bean) getApplicationContext();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(b.baseURL)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        allAPIs cr = retrofit.create(allAPIs.class);
+
+        Call<ViewBean> call = cr.view(b.userid);
+
+        call.enqueue(new Callback<ViewBean>() {
+            @Override
+            public void onResponse(Call<ViewBean> call, Response<ViewBean> response) {
+
+                DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true)
+                        .cacheOnDisc(true).resetViewBeforeLoading(false).build();
+                ImageLoader loader = ImageLoader.getInstance();
+               // loader.displayImage(response.body().getBackgroundImage() , back , options);
+                loader.displayImage(response.body().getData().getImage() , round , options);
+
+                bar.setVisibility(View.GONE);
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ViewBean> call, Throwable t) {
+
+                bar.setVisibility(View.GONE);
+
+            }
+        });
+    }
+
+    private static String getPath(final Context context, final Uri uri)
+    {
+        final boolean isKitKatOrAbove = Build.VERSION.SDK_INT >=  Build.VERSION_CODES.KITKAT;
+
+        // DocumentProvider
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            if (isKitKatOrAbove && DocumentsContract.isDocumentUri(context, uri)) {
+                // ExternalStorageProvider
+                if (isExternalStorageDocument(uri)) {
+                    final String docId = DocumentsContract.getDocumentId(uri);
+                    final String[] split = docId.split(":");
+                    final String type = split[0];
+
+                    if ("primary".equalsIgnoreCase(type)) {
+                        return Environment.getExternalStorageDirectory() + "/" + split[1];
+                    }
+
+                    // TODO handle non-primary volumes
+                }
+                // DownloadsProvider
+                else if (isDownloadsDocument(uri)) {
+
+                    final String id = DocumentsContract.getDocumentId(uri);
+                    final Uri contentUri = ContentUris.withAppendedId(
+                            Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
+
+                    return getDataColumn(context, contentUri, null, null);
+                }
+                // MediaProvider
+                else if (isMediaDocument(uri)) {
+                    final String docId = DocumentsContract.getDocumentId(uri);
+                    final String[] split = docId.split(":");
+                    final String type = split[0];
+
+                    Uri contentUri = null;
+                    if ("image".equals(type)) {
+                        contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                    } else if ("video".equals(type)) {
+                        contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+                    } else if ("audio".equals(type)) {
+                        contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+                    }
+
+                    final String selection = "_id=?";
+                    final String[] selectionArgs = new String[] {
+                            split[1]
+                    };
+
+                    return getDataColumn(context, contentUri, selection, selectionArgs);
+                }
+            }
+            // MediaStore (and general)
+            else if ("content".equalsIgnoreCase(uri.getScheme())) {
+                return getDataColumn(context, uri, null, null);
+            }
+            // File
+            else if ("file".equalsIgnoreCase(uri.getScheme())) {
+                return uri.getPath();
+            }
+        }
+
+        return null;
+    }
+
+
+    private static boolean isExternalStorageDocument(Uri uri) {
+        return "com.android.externalstorage.documents".equals(uri.getAuthority());
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is DownloadsProvider.
+     */
+    private static boolean isDownloadsDocument(Uri uri) {
+        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is MediaProvider.
+     */
+    private static boolean isMediaDocument(Uri uri) {
+        return "com.android.providers.media.documents".equals(uri.getAuthority());
+    }
+
+    private static String getDataColumn(Context context, Uri uri, String selection,
+                                        String[] selectionArgs) {
+
+        Cursor cursor = null;
+        final String column = "_data";
+        final String[] projection = {
+                column
+        };
+
+        try {
+            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
+                    null);
+            if (cursor != null && cursor.moveToFirst()) {
+                final int column_index = cursor.getColumnIndexOrThrow(column);
+                return cursor.getString(column_index);
+            }
+        } finally {
+            if (cursor != null)
+                cursor.close();
+        }
+        return null;
     }
 }

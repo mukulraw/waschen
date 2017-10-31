@@ -25,6 +25,7 @@ import com.TBX.tvs.waschen.UpdateProfilePOJO.UpdateProfileBean;
 import com.TBX.tvs.waschen.UploadImagePOJO.UploadBean;
 import com.TBX.tvs.waschen.ViewProfilePOJO.ViewBean;
 
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
@@ -133,7 +134,7 @@ public interface allAPIs {
     @POST("waschen_api/product_list.php")
     Call<UploadBean> upload (
             @Part("userId") String id ,
-            @Part("image") String image
+            @Part MultipartBody.Part file
 
     );
 

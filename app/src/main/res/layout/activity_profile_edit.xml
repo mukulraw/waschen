@@ -14,29 +14,35 @@
             android:orientation="vertical">
 
 
-            <android.support.v7.widget.Toolbar
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="?attr/actionBarSize">
 
-                android:paddingStart="30dp"
-                android:textColor="#ffffff"
-                android:background="#3e3d3d"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/black_water"
+                    android:scaleType="centerCrop"
+                    />
+
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#00000000"
+                    />
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2"
                 android:layout_marginTop="18dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="5dp"
-                    >
 
 
                     <TextView
@@ -45,41 +51,11 @@
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:text="First Name" />
-                </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_marginStart="5dp"
-                    >
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Last Name"
-                        android:padding="5dp"
-                        />
-
-                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="5dp"
-                    >
 
 
                     <EditText
@@ -88,12 +64,14 @@
                         android:id="@+id/fn"
                         android:hint="First Name"
                         android:padding="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
                         android:inputType="text"
                         android:background="@drawable/black_kam_stroke"
                         />
-                </LinearLayout>
 
-                <LinearLayout
+
+               <!-- <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -102,15 +80,39 @@
 
 
                     <EditText
+                        android:id="@+id/ln"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/ln"
+                        android:background="@drawable/black_kam_stroke"
                         android:hint="Last Name"
                         android:inputType="text"
-                        android:background="@drawable/black_kam_stroke"
-                        android:padding="5dp"/>
-                </LinearLayout>
-            </LinearLayout>
+                        android:padding="5dp" />
+                </LinearLayout>-->
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:padding="2dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_kam_stroke"
+                android:padding="5dp"
+                android:id="@+id/email"
+                android:inputType="text"
+                android:hint="Email"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"/>
+
 
 
             <TextView
@@ -132,7 +134,6 @@
                 android:id="@+id/cn"
                 android:inputType="number"
                 android:hint="Contact"
-                android:layout_marginBottom="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"/>
 
@@ -143,6 +144,7 @@
                 android:padding="2dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
                 />
 
 
@@ -332,7 +334,7 @@
                         android:padding="5dp"
                         android:hint="Country"
                         android:inputType="text"
-                        android:id="@+id/c"/>
+                        android:id="@+id/country"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -343,8 +345,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Continue"
-        android:id="@+id/cont"
+        android:text="Update"
+        android:id="@+id/update"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:layout_alignParentBottom="true"

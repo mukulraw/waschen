@@ -44,4 +44,5 @@ public class UpdateProfileBean {
         this.data = data;
     }
 
+
 }

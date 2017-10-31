@@ -1,5 +1,6 @@
 package com.TBX.tvs.waschen;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +36,8 @@ public class ProfileFrag extends Fragment {
 
     Toolbar toolbar;
 
+    ImageView edit;
+
 
     @Nullable
     @Override
@@ -52,6 +56,36 @@ public class ProfileFrag extends Fragment {
         state = (TextView) view.findViewById(R.id.state);
         city = (TextView) view.findViewById(R.id.city);
         country = (TextView) view.findViewById(R.id.country);
+        edit = (ImageView)view.findViewById(R.id.edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent i = new Intent(getContext() , ProfileEdit.class);
+                startActivity(i);
+            }
+        });
+
+
+
+        return view;
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        DrawerLayout drawer = (DrawerLayout)((MainActivity) getContext()).findViewById(R.id.activity_main);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                getActivity(), drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        toolbar.setTitle("My Profile");
+
 
         bar.setVisibility(View.VISIBLE);
         Bean b = (Bean) getContext().getApplicationContext();
@@ -97,22 +131,6 @@ public class ProfileFrag extends Fragment {
             }
         });
 
-        return view;
-
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        DrawerLayout drawer = (DrawerLayout)((MainActivity) getContext()).findViewById(R.id.activity_main);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                getActivity(), drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        toolbar.setTitle("My Profile");
 
     }
 }

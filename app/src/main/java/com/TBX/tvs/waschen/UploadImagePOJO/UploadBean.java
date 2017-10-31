@@ -11,7 +11,7 @@ public class UploadBean {
 
     @SerializedName("status")
     @Expose
-    private String status;
+    private Integer status;
     @SerializedName("message")
     @Expose
     private String message;
@@ -19,11 +19,11 @@ public class UploadBean {
     @Expose
     private Data data;
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -42,7 +42,6 @@ public class UploadBean {
     public void setData(Data data) {
         this.data = data;
     }
-
 
 
 }
