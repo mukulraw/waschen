@@ -239,7 +239,7 @@ loadData();
             @Override
             public void onResponse(Call<GetBean> call, Response<GetBean> response) {
 
-                Toast.makeText(BucketCart.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(BucketCart.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
                 adapter.Setgrid(response.body().getData());
 

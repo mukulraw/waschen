@@ -155,7 +155,7 @@ public class PickUp extends Fragment {
             public void onClick(View view) {
 
 
-                bar.setVisibility(View.VISIBLE);
+
                 String n = name.getText().toString();
                 String e = email.getText().toString();
                 String a = address.getText().toString();

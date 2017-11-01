@@ -43,6 +43,8 @@ public class Checkout extends AppCompatActivity {
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setNavigationIcon(R.drawable.arrow);
 
+        toolbar.setTitle("Check Out Details");
+
         tabs = (TabLayout) findViewById(R.id.tabs);
 
         paadapter = new PagerAdapter(getSupportFragmentManager(), 4);

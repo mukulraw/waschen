@@ -221,6 +221,8 @@ public class Payment extends Fragment {
                         date
                 );
 
+                Log.d("asdasd" , "response");
+
                 call.enqueue(new Callback<CashBean>() {
                     @Override
                     public void onResponse(Call<CashBean> call, Response<CashBean> response) {
@@ -250,6 +252,7 @@ public class Payment extends Fragment {
                                 b.gst_tax = "";
                                 b.grand_total = "";
 
+                        Log.d("asdasd" , "response");
 
                         pager.setCurrentItem(3);
 
@@ -258,7 +261,7 @@ public class Payment extends Fragment {
 
                     @Override
                     public void onFailure(Call<CashBean> call, Throwable t) {
-
+                        Log.d("asdasd" , t.toString());
                         bar.setVisibility(View.GONE);
 
                     }

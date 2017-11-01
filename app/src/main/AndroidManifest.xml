@@ -70,8 +70,10 @@
         <activity
             android:name=".ViewMore"
             android:screenOrientation="portrait" />
-        <activity android:name=".Edit" />
-        <activity android:name=".ProfileEdit"></activity>
+        <activity android:name=".Edit"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ProfileEdit"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -1,11 +1,16 @@
 package com.TBX.tvs.waschen;
 
+import android.*;
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -37,6 +42,9 @@ public class Splash extends AppCompatActivity {
     ProgressBar bar;
     SharedPreferences pref;
 
+    final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
+    String[] PERMISSIONS = {Manifest.permission.READ_EXTERNAL_STORAGE};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +56,93 @@ public class Splash extends AppCompatActivity {
 
         ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(Splash.this));
 
+        if(hasPermissions(this , PERMISSIONS))
+        {
+            startApp();
+        }
+        else
+        {
+            ActivityCompat.requestPermissions(this , PERMISSIONS , REQUEST_CODE_ASK_PERMISSIONS);
+        }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    getPackageName(), PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+        } catch (NoSuchAlgorithmException e) {
+        }
+
+    }
+
+
+    public static boolean hasPermissions(Context context, String... permissions) {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == REQUEST_CODE_ASK_PERMISSIONS)
+        {
+            if (ActivityCompat.checkSelfPermission(getApplicationContext() , android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+            {
+
+                startApp();
+
+            }
+            else
+            {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this , Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+
+                    Toast.makeText(getApplicationContext() , "Permissions are required for this app" , Toast.LENGTH_SHORT).show();
+                    finish();
+
+                }
+                //permission is denied (and never ask again is  checked)
+                //shouldShowRequestPermissionRationale will return false
+                else {
+                    Toast.makeText(this, "Go to settings and enable permissions", Toast.LENGTH_LONG)
+                            .show();
+                    finish();
+                    //                            //proceed with logic by disabling the related features or quit the app.
+                }
+            }
+
+        }
+
+
+    }
+
+
+    public void startApp()
+    {
         String em = pref.getString("email" , "");
         String pa = pref.getString("pass" , "");
 
@@ -135,21 +229,6 @@ public class Splash extends AppCompatActivity {
             } , 1500);
 
         }
-
-
-
-        try {
-            PackageInfo info = getPackageManager().getPackageInfo(
-                    getPackageName(), PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-        } catch (NoSuchAlgorithmException e) {
-        }
-
     }
 
 
