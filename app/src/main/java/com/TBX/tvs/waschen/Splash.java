@@ -9,6 +9,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Build;
+import android.support.annotation.AnimatorRes;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,9 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -36,11 +40,15 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-public class Splash extends AppCompatActivity {
+public class Splash extends AppCompatActivity  implements Animation.AnimationListener{
 
     Timer t;
     ProgressBar bar;
     SharedPreferences pref;
+
+    ImageView wash , text;
+
+    Animation anim;
 
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
     String[] PERMISSIONS = {Manifest.permission.READ_EXTERNAL_STORAGE};
@@ -49,6 +57,18 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_layout);
+
+        wash = (ImageView) findViewById(R.id.waschen);
+        text = (ImageView) findViewById(R.id.wash);
+
+        anim = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.bounce);
+
+        anim.setAnimationListener(this);
+
+
+        wash.startAnimation(anim);
+
 
         bar = (ProgressBar)findViewById(R.id.progress);
 
@@ -64,18 +84,6 @@ public class Splash extends AppCompatActivity {
         {
             ActivityCompat.requestPermissions(this , PERMISSIONS , REQUEST_CODE_ASK_PERMISSIONS);
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         try {
@@ -232,4 +240,21 @@ public class Splash extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onAnimationStart(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+
+
+
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
+    }
 }

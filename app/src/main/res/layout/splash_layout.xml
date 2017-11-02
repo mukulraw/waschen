@@ -5,44 +5,70 @@
     android:background="#ffffff"
     >
 
-    <ImageView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/waschen"
+            android:src="@drawable/waschen"
+            android:layout_centerInParent="true"
+
+
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/text"
+            android:id="@+id/wash"
+            android:layout_gravity="center_horizontal"
+            android:paddingStart="20sp"
+            android:paddingEnd="20sp"
+
+
+            />
+
+
+    </LinearLayout>
+
+
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/lll"
-        android:padding="50dp"
+        android:orientation="vertical"
+        >
 
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:textColor="#000"
+            android:visibility="gone"
+            android:layout_marginTop="300dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="WASCHEN"
+            android:textStyle="bold"/>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:gravity="center"
+            android:text="Lorem Ipsum is simply dummy text of the
+     typesetting industry."
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35sp"
-        android:textColor="#000"
-        android:visibility="gone"
-        android:layout_marginTop="300dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:text="WASCHEN"
-        android:textStyle="bold"/>
+            android:textStyle="bold"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:visibility="gone"
-        android:gravity="center"
-        android:text="Lorem Ipsum is simply dummy text of the
- typesetting industry."
-
-        android:textStyle="bold"/>
-
-</LinearLayout>
+    </LinearLayout>-->
 
     <ProgressBar
         android:layout_width="wrap_content"
