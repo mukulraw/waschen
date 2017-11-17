@@ -341,7 +341,7 @@ loadData();
 
                             Bean b = (Bean)context.getApplicationContext();
 
-                            b.cartid = response.body().getCartid();
+                            //b.cartid = response.body().getCartid();
 
                             loadData();
 
@@ -402,7 +402,7 @@ loadData();
 
                             Bean b = (Bean)context.getApplicationContext();
 
-                            b.cartid = response.body().getCartid();
+                            //b.cartid = response.body().getCartid();
 
                            loadData();
 

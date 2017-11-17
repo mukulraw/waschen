@@ -195,7 +195,7 @@ public class Payment extends Fragment {
 
                 final allAPIs cr = retrofit.create(allAPIs.class);
                 Call<CashBean> call = cr.cash(
-                        b.userid ,
+                        b.userid,
                         b.cartid,
                         b.billname,
                         b.billemail,

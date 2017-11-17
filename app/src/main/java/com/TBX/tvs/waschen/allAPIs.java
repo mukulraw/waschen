@@ -253,7 +253,7 @@ public interface allAPIs {
     @Multipart
     @POST("waschen_api/cashondelivery.php")
     Call<CashBean> cash (
-            @Part("userId") String id ,
+            @Part("userid") String id ,
             @Part("cartid") String n ,
             @Part("billname") String p ,
             @Part("billemail") String a ,

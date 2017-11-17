@@ -221,17 +221,6 @@ public class BucketFragment extends Fragment {
 
                             String cou = response.body().getBucketCount();
 
-                            int count = Integer.parseInt(cou);
-
-
-                            if (count > 0 )
-                            {
-                                hide.setVisibility(View.VISIBLE);
-                            }
-                            else
-                            {
-                                hide.setVisibility(View.GONE);
-                            }
 
 
 
