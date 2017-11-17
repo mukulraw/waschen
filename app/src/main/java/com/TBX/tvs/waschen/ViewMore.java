@@ -105,7 +105,7 @@ public class ViewMore extends AppCompatActivity {
 
                 zip.setText(response.body().getZip());
                 id.setText(response.body().getOrderId());
-                date.setText(response.body().getStatus());
+                date.setText(response.body().getOrderStatus1());
                 date1.setText(response.body().getPlacedDate());
                 address.setText(response.body().getAddress());
 

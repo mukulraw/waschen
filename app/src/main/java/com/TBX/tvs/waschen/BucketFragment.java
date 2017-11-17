@@ -41,11 +41,11 @@ public class BucketFragment extends Fragment {
     RecyclerView recyclerView;
     GridLayoutManager manager;
     BucketAdapter adapter;
-    TextView clearcart , addmore ;
+    //TextView clearcart , addmore ;
     List<Datum> list;
     ProgressBar bar;
 
-    LinearLayout hide;
+    //LinearLayout hide;
 
     Toolbar toolbar;
 
@@ -69,15 +69,15 @@ public class BucketFragment extends Fragment {
         bar = (ProgressBar) view.findViewById(R.id.progress);
         manager = new GridLayoutManager(getContext(),1);
 
-        hide = (LinearLayout) ((MainActivity)getContext()).findViewById(R.id.hide);
+        //hide = (LinearLayout) ((MainActivity)getContext()).findViewById(R.id.hide);
 
         list = new ArrayList<>();
         adapter = new BucketAdapter(getContext() , list);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
-        addmore = (TextView)view.findViewById(R.id.addmore);
-        clearcart = (TextView)view.findViewById(R.id.clear);
-        addmore.setOnClickListener(new View.OnClickListener() {
+        //addmore = (TextView)view.findViewById(R.id.addmore);
+        //clearcart = (TextView)view.findViewById(R.id.clear);
+        /*addmore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -86,7 +86,7 @@ public class BucketFragment extends Fragment {
 
             }
         });
-
+*/
 
         bar.setVisibility(View.VISIBLE);
         Bean b = (Bean)getContext().getApplicationContext();

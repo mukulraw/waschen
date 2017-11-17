@@ -51,42 +51,6 @@
     </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:id="@+id/hide"
-            android:visibility="gone"
-            android:background="#c8000000"
-            >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:padding="10dp"
-                android:id="@+id/clear"
-                android:layout_gravity="center_vertical"
-                android:text="Clear Bucket"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:layout_weight="1"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:padding="10dp"
-                android:id="@+id/proceed"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:text="Proceed To Bucket"
-                android:layout_weight="1"
-                />
-
-        </LinearLayout>
 
 
         <ProgressBar

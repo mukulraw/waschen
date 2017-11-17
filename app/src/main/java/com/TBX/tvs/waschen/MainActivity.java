@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
     ProgressBar bar;
 
-    LinearLayout hide;
-    TextView clear , proceed;
+
+    //TextView clear , proceed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,9 +124,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        proceed = (TextView) findViewById(R.id.proceed);
+        //proceed = (TextView) findViewById(R.id.proceed);
 
-        proceed.setOnClickListener(new View.OnClickListener() {
+        /*proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -179,8 +179,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        hide = (LinearLayout) findViewById(R.id.hide);
+*/
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
