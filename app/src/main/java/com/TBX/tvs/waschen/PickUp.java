@@ -15,9 +15,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +28,7 @@ import android.widget.Toast;
 import com.TBX.tvs.waschen.FaqPOJO.FaqBean;
 import com.TBX.tvs.waschen.GetZipPOJO.DeliveryMethod;
 import com.TBX.tvs.waschen.GetZipPOJO.GetZipBean;
+import com.TBX.tvs.waschen.UpdateProfilePOJO.UpdateProfileBean;
 import com.TBX.tvs.waschen.ViewProfilePOJO.ViewBean;
 
 import java.util.ArrayList;
@@ -37,59 +41,65 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
+import static com.facebook.FacebookSdk.getApplicationContext;
+
 
 public class PickUp extends Fragment {
 
-    EditText city  , address  , email ,state , contact  , shipdiff , edit , name , count;
+    EditText city  , address  , email ,state , contact  , shipdiff , edit , name , count , land;
     CheckBox ship;
     ViewPager pager;
-    TextView cont ;
+    TextView cont  , birth;
     ProgressBar bar;
     Spinner pincode;
+    Button save;
     List<String> codes;
-
-
     String code = "";
+    String date1 = "";
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.billinf_layout , container ,false);
+        View view = inflater.inflate(R.layout.billinf_layout, container, false);
 
-        city = (EditText)view.findViewById(R.id.city);
+        city = (EditText) view.findViewById(R.id.city);
 
         codes = new ArrayList<>();
 
         //edit = (TextView)view.findViewById(R.id.edit);
 
-        address = (EditText)view.findViewById(R.id.address);
+        address = (EditText) view.findViewById(R.id.address);
 
         pincode = (Spinner) view.findViewById(R.id.pincode);
 
-        email = (EditText)view.findViewById(R.id.email);
+        email = (EditText) view.findViewById(R.id.email);
 
-        state = (EditText)view.findViewById(R.id.state);
+        state = (EditText) view.findViewById(R.id.state);
+        land = (EditText) view.findViewById(R.id.landmark);
 
-        count = (EditText)view.findViewById(R.id.country);
+        count = (EditText) view.findViewById(R.id.country);
 
-        contact = (EditText)view.findViewById(R.id.contact);
+        contact = (EditText) view.findViewById(R.id.contact);
 
-        ship = (CheckBox)view.findViewById(R.id.shipadd);
+        ship = (CheckBox) view.findViewById(R.id.shipadd);
 
         name = (EditText) view.findViewById(R.id.name);
 
-        cont = (TextView)view.findViewById(R.id.cont);
+        cont = (TextView) view.findViewById(R.id.cont);
 
-        bar = (ProgressBar)view.findViewById(R.id.progress);
+        birth = (TextView) view.findViewById(R.id.birthday);
 
-        pager = (ViewPager)((Checkout)getContext()).findViewById(R.id.pager);
+        bar = (ProgressBar) view.findViewById(R.id.progress);
+        save = (Button) view.findViewById(R.id.save);
+
+        pager = (ViewPager) ((Checkout) getContext()).findViewById(R.id.pager);
 
 
         bar.setVisibility(View.VISIBLE);
 
-        Bean b = (Bean)getContext().getApplicationContext();
+        Bean b = (Bean) getContext().getApplicationContext();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(b.baseURL)
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -104,8 +114,7 @@ public class PickUp extends Fragment {
             public void onResponse(Call<GetZipBean> call, Response<GetZipBean> response) {
 
 
-                for (int i = 0 ; i < response.body().getDeliveryMethod().size() ; i++)
-                {
+                for (int i = 0; i < response.body().getDeliveryMethod().size(); i++) {
                     codes.add(response.body().getDeliveryMethod().get(i).getCoupon());
                 }
 
@@ -131,6 +140,91 @@ public class PickUp extends Fragment {
             }
         });
 
+
+    birth.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+
+            final Dialog dialog = new Dialog(getActivity());
+            dialog.setContentView(R.layout.pop_up);
+            dialog.setCancelable(true);
+            dialog.show();
+
+            Button ok = (Button)dialog.findViewById(R.id.ok);
+            final DatePicker date = (DatePicker) dialog.findViewById(R.id.picker);
+
+            ok.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    String day = String.valueOf(date.getDayOfMonth());
+                    String month = String.valueOf(date.getMonth() + 1);
+                    String year = String.valueOf(date.getYear());
+
+                    date1 = day + "-" + month + "-" + year;
+
+                    birth.setText(day + "-" + month + "-" + year);
+
+                    dialog.dismiss();
+
+                }
+            });
+        }
+    });
+
+    save.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            bar.setVisibility(View.VISIBLE);
+
+            String f = name.getText().toString();
+            String c = contact.getText().toString();
+            String ci = city.getText().toString();
+            String s = state.getText().toString();
+            String a = address.getText().toString();
+            String  em = email.getText().toString();
+//            String coun = count.getText().toString();
+            String bir = birth.getText().toString();
+            String lan = land.getText().toString();
+
+            Bean b = (Bean)getContext().getApplicationContext();
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(b.baseURL)
+                    .addConverterFactory(ScalarsConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            allAPIs cr = retrofit.create(allAPIs.class);
+            Call<UpdateProfileBean> call2 = cr.updateprofile(b.userid , f , c , a , ci , code ,"" , bir , lan , s);
+            call2.enqueue(new Callback<UpdateProfileBean>() {
+                @Override
+                public void onResponse(Call<UpdateProfileBean> call, Response<UpdateProfileBean> response) {
+
+
+                    Toast.makeText(getContext(),"Address Saved Successfully", Toast.LENGTH_SHORT).show();
+
+
+                    bar.setVisibility(View.GONE);
+
+
+                }
+
+                @Override
+                public void onFailure(Call<UpdateProfileBean> call, Throwable t) {
+
+                    bar.setVisibility(View.GONE);
+
+                }
+            });
+
+
+
+
+
+        }
+    });
 
 
 
@@ -163,7 +257,7 @@ public class PickUp extends Fragment {
                 String s = state.getText().toString();
                // String p = pincode.getText().toString();
                 String  co = contact.getText().toString();
-                String  coun = count.getText().toString();
+//                String  coun = count.getText().toString();
 
 
                 if (n.length()>0)
@@ -184,8 +278,7 @@ public class PickUp extends Fragment {
                                 {
                                     if (s.length()>0)
                                     {
-                                           if (coun.length()>0)
-                                           {
+
 
                                                if (ship.isChecked())
                                                {
@@ -199,7 +292,7 @@ public class PickUp extends Fragment {
                                                    b.billcity = c;
                                                    b.billstate = s;
                                                    b.billzip = code;
-                                                   b.billcountry = coun;
+                                                   //b.billcountry = coun;
 
 
                                                    b.shipfname = n;
@@ -208,10 +301,30 @@ public class PickUp extends Fragment {
                                                    b.shipcity = c;
                                                    b.shipstate = s;
                                                    b.shipzip = code;
-                                                   b.shipcountry = coun;
+                                                   //b.shipcountry = coun;
 
 
-                                                   pager.setCurrentItem(2);
+                                                   final Dialog dialog = new Dialog(getActivity());
+                                                   dialog.setContentView(R.layout.continue_dialog);
+                                                   dialog.setCancelable(true);
+
+                                                   dialog.show();
+
+                                                   RadioGroup radioGroup = (RadioGroup)dialog.findViewById(R.id.radio);
+                                                   Button ok = (Button)dialog.findViewById(R.id.ok);
+                                                   ok.setOnClickListener(new View.OnClickListener() {
+                                                       @Override
+                                                       public void onClick(View view) {
+
+                                                           pager.setCurrentItem(2);
+
+                                                           dialog.dismiss();
+
+                                                       }
+                                                   });
+
+
+
                                                }
                                                else
                                                {
@@ -224,19 +337,18 @@ public class PickUp extends Fragment {
                                                    b.billcity = c;
                                                    b.billstate = s;
                                                    b.billzip = code;
-                                                   b.billcountry = coun;
+                                                   //b.billcountry = coun;
+
 
                                                    pager.setCurrentItem(1);
+
                                                }
                                            }
 
-                                           else {
-
-                                               Toast.makeText(getContext(), "Invalid Country", Toast.LENGTH_SHORT).show();
-                                           }
 
 
-                                    }
+
+
                                     else {
                                         Toast.makeText(getContext(), "Invalid State", Toast.LENGTH_SHORT).show();
 

@@ -146,12 +146,21 @@ public class HistoryFrag extends Fragment{
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
 
-            Datum item = list.get(position);
+            final Datum item = list.get(position);
             //holder.order.setText(item.getOrderId());
             holder.date.setText(item.getPlacedDate());
             holder.orderno.setText(item.getOrderId());
             holder.status.setText(item.getOrderStatus());
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
+
+                    Intent i = new Intent(context , ViewMore.class);
+                    i.putExtra("order" , item.getOrderId());
+                    context.startActivity(i);
+                }
+            });
 
         }
 
@@ -178,15 +187,7 @@ public class HistoryFrag extends Fragment{
                 date = (TextView) itemView.findViewById(R.id.date);
                 status = (TextView) itemView.findViewById(R.id.pending);
 
-                itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
 
-
-                        Intent i = new Intent(context , ViewMore.class);
-                        context.startActivity(i);
-                    }
-                });
             }
         }
     }

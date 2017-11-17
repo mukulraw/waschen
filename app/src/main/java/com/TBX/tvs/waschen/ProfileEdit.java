@@ -1,5 +1,6 @@
 package com.TBX.tvs.waschen;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
@@ -30,7 +33,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ProfileEdit extends AppCompatActivity {
 
-     EditText fn , ln , city , state , contact , address , country , email;
+     EditText fn , ln , city , state , contact , address , country , email  , land;
 
      Spinner pincode;
 
@@ -38,9 +41,11 @@ public class ProfileEdit extends AppCompatActivity {
 
      String code = "";
 
+    String date1 = "";
+
      ProgressBar bar;
 
-     TextView update;
+     TextView update , birth;
 
      Toolbar toolbar;
 
@@ -60,6 +65,10 @@ public class ProfileEdit extends AppCompatActivity {
         state = (EditText) findViewById(R.id.state);
 
         address = (EditText) findViewById(R.id.add);
+
+        birth = (TextView) findViewById(R.id.birthday);
+
+        land = (EditText) findViewById(R.id.landmark);
 
         codes = new ArrayList<>();
 
@@ -84,6 +93,40 @@ public class ProfileEdit extends AppCompatActivity {
         });
 
         toolbar.setTitle("Edit Profile");
+
+
+        birth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final Dialog dialog = new Dialog(ProfileEdit.this);
+                dialog.setContentView(R.layout.pop_up);
+                dialog.setCancelable(true);
+                dialog.show();
+
+                Button ok = (Button)dialog.findViewById(R.id.ok);
+                final DatePicker date = (DatePicker) dialog.findViewById(R.id.picker);
+
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        String day = String.valueOf(date.getDayOfMonth());
+                        String month = String.valueOf(date.getMonth() + 1);
+                        String year = String.valueOf(date.getYear());
+
+                        date1 = day + "-" + month + "-" + year;
+
+                        birth.setText(day + "-" + month + "-" + year);
+
+                        dialog.dismiss();
+
+                    }
+                });
+            }
+
+        });
+
 
 
         Bean b = (Bean)getApplicationContext();
@@ -113,9 +156,14 @@ public class ProfileEdit extends AppCompatActivity {
                 email.setText(response.body().getData().getEmail());
                 address.setText(response.body().getData().getAddress());
                // pincode.setText(response.body().getData().getZipcode());
+
                 state.setText(response.body().getData().getState());
+
                 country.setText(response.body().getData().getCountry());
                 city.setText(response.body().getData().getCity());
+                land.setText(response.body().getData().getLandmark());
+                birth.setText(response.body().getData().getBirthday());
+
 
                 bar.setVisibility(View.GONE);
 
@@ -197,6 +245,8 @@ public class ProfileEdit extends AppCompatActivity {
                 String a = address.getText().toString();
                 String  em = email.getText().toString();
                 String coun = country.getText().toString();
+                String bir = birth.getText().toString();
+                String lan = land.getText().toString();
 
                 Bean b = (Bean)getApplicationContext();
                 Retrofit retrofit = new Retrofit.Builder()
@@ -206,7 +256,7 @@ public class ProfileEdit extends AppCompatActivity {
                         .build();
 
                 allAPIs cr = retrofit.create(allAPIs.class);
-                Call<UpdateProfileBean> call2 = cr.updateprofile(b.userid , f , c , a , ci , code ,coun);
+                Call<UpdateProfileBean> call2 = cr.updateprofile(b.userid , f , c , a , ci , code ,coun , bir , lan , s);
                 call2.enqueue(new Callback<UpdateProfileBean>() {
                     @Override
                     public void onResponse(Call<UpdateProfileBean> call, Response<UpdateProfileBean> response) {

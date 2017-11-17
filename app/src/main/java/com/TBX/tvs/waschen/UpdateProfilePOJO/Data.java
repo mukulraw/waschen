@@ -27,6 +27,9 @@ public class Data {
     @SerializedName("zipcode")
     @Expose
     private String zipcode;
+    @SerializedName("state")
+    @Expose
+    private String state;
     @SerializedName("image")
     @Expose
     private String image;
@@ -77,6 +80,14 @@ public class Data {
 
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getImage() {

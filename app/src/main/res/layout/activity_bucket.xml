@@ -279,7 +279,7 @@
             android:layout_gravity="center_vertical"
             android:gravity="center"
             android:textColor="#ffffff"
-            android:text="Proceed To Checkout"
+            android:text="Checkout"
             android:layout_weight="1"
             />
 

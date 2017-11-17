@@ -39,4 +39,5 @@ public class ViewBean {
         this.data = data;
     }
 
+
 }

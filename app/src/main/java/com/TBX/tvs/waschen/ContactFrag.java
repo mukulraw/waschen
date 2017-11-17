@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,8 +31,6 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 
 public class ContactFrag extends Fragment {
-
-
 
     EditText name,phone,email,comments;
 
@@ -67,7 +66,6 @@ public class ContactFrag extends Fragment {
             @Override
             public void onClick(View view) {
 
-                bar.setVisibility(View.VISIBLE);
 
                 String n = name.getText().toString();
                 String p = phone.getText().toString();
@@ -75,30 +73,89 @@ public class ContactFrag extends Fragment {
                 String c = comments.getText().toString();
 
 
-                Bean b = (Bean)getContext().getApplicationContext();
 
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(b.baseURL)
-                        .addConverterFactory(ScalarsConverterFactory.create())
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
+                if (n.length()>0){
 
-                allAPIs cr = retrofit.create(allAPIs.class);
-                Call<SubmitBean> call = cr.submit(n , e , p , c);
+                    if (Utils.isValidMobile(p)){
 
-                call.enqueue(new Callback<SubmitBean>() {
-                    @Override
-                    public void onResponse(Call<SubmitBean> call, Response<SubmitBean> response) {
 
-                        bar.setVisibility(View.GONE);
+
+                        if (e.length()>0){
+
+
+                            if (c.length()>0){
+
+                                bar.setVisibility(View.VISIBLE);
+
+
+                                Bean b = (Bean)getContext().getApplicationContext();
+
+                                Retrofit retrofit = new Retrofit.Builder()
+                                        .baseUrl(b.baseURL)
+                                        .addConverterFactory(ScalarsConverterFactory.create())
+                                        .addConverterFactory(GsonConverterFactory.create())
+                                        .build();
+
+                                allAPIs cr = retrofit.create(allAPIs.class);
+                                Call<SubmitBean> call = cr.submit(n , e , p , c);
+
+                                call.enqueue(new Callback<SubmitBean>() {
+                                    @Override
+                                    public void onResponse(Call<SubmitBean> call, Response<SubmitBean> response) {
+
+
+
+                                        Toast.makeText(getContext(),response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                        bar.setVisibility(View.GONE);
+
+                                        Log.d("ghdkjh" , "response");
+
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<SubmitBean> call, Throwable t) {
+
+                                        Log.d("rgtr" , t.toString());
+
+                                        bar.setVisibility(View.GONE);
+                                    }
+                                });
+
+
+
+
+
+
+
+
+                            }
+                            else {
+
+                                Toast.makeText(getContext(), "Invalid Comments", Toast.LENGTH_SHORT).show();
+                            }
+
+
+                        }
+
+                        else {
+
+                            Toast.makeText(getContext(), "Invalid Email", Toast.LENGTH_SHORT).show();
+                        }
                     }
+                    else {
 
-                    @Override
-                    public void onFailure(Call<SubmitBean> call, Throwable t) {
-
-                        bar.setVisibility(View.GONE);
+                        Toast.makeText(getContext(), "Invalid Phone", Toast.LENGTH_SHORT).show();
                     }
-                });
+                }
+                else
+                {
+                    Toast.makeText(getContext(), "Invalid Name", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+                Log.d("jgdf" , "hmmm");
 
 
 

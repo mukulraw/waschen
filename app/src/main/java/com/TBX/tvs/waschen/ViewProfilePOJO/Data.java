@@ -30,6 +30,12 @@ public class Data {
     @SerializedName("country")
     @Expose
     private String country;
+    @SerializedName("birthday")
+    @Expose
+    private String birthday;
+    @SerializedName("landmark")
+    @Expose
+    private String landmark;
     @SerializedName("city")
     @Expose
     private String city;
@@ -99,6 +105,22 @@ public class Data {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getLandmark() {
+        return landmark;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
     }
 
     public String getCity() {

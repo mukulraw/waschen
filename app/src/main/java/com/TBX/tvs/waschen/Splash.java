@@ -234,7 +234,7 @@ public class Splash extends AppCompatActivity  implements Animation.AnimationLis
 
 
                 }
-            } , 1500);
+            } , 2000);
 
         }
     }

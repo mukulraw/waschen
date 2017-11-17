@@ -13,6 +13,7 @@ import com.TBX.tvs.waschen.GetBucketPOJO.GetBean;
 import com.TBX.tvs.waschen.GetZipPOJO.GetZipBean;
 import com.TBX.tvs.waschen.GrandTotalPOJO.GrandBean;
 import com.TBX.tvs.waschen.LoginPOJO.LoginBean;
+import com.TBX.tvs.waschen.NudgePOJO.NudgeBean;
 import com.TBX.tvs.waschen.OrderDetailPOJO.DetailBean;
 import com.TBX.tvs.waschen.OrderPojo.OrderBean;
 import com.TBX.tvs.waschen.RemovePOJO.RemoveBean;
@@ -23,6 +24,7 @@ import com.TBX.tvs.waschen.SubmitPOJO.SubmitBean;
 import com.TBX.tvs.waschen.UpdatePOJO.UpdateBean;
 import com.TBX.tvs.waschen.UpdateProfilePOJO.UpdateProfileBean;
 import com.TBX.tvs.waschen.UploadImagePOJO.UploadBean;
+import com.TBX.tvs.waschen.ViewMorePOJO.ViewMoreBean;
 import com.TBX.tvs.waschen.ViewProfilePOJO.ViewBean;
 
 import okhttp3.MultipartBody;
@@ -221,8 +223,10 @@ public interface allAPIs {
             @Part("address") String a ,
             @Part("city") String c ,
             @Part("zip") String z ,
-            @Part("country") String country
-
+            @Part("country") String country,
+            @Part("birthday") String b,
+            @Part("landmark") String l,
+            @Part("state") String state
     );
 
 
@@ -276,6 +280,25 @@ public interface allAPIs {
 
     );
 
+
+
+    @Multipart
+    @POST("waschen_api/add_nudge.php")
+    Call<NudgeBean> nudge (
+            @Part("email") String c,
+            @Part("username") String u
+
+    );
+
+
+
+    @Multipart
+    @POST("waschen_api/orderbyid.php")
+    Call<ViewMoreBean> more (
+            @Part("userId") String c,
+            @Part("orderId") String u
+
+    );
 
 
 

@@ -53,7 +53,7 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
-                    android:hint="Mukul Rawat"
+                    android:hint="Name"
                     android:padding="5dp"
                     android:textColor="#817f7f" />
 
@@ -73,7 +73,7 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
-                    android:hint="nisha@technobrix.com"
+                    android:hint="Email"
                     android:padding="5dp"
                     android:textColor="#7e7a7a" />
 
@@ -93,7 +93,8 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="18dp"
                     android:background="@drawable/cdcdcd_white"
-                    android:hint="7678119291"
+                    android:hint="Phone"
+                    android:inputType="phone"
                     android:padding="5dp"
                     android:textColor="#747373" />
 
@@ -106,14 +107,22 @@
                     android:padding="10dp"
                     android:text="Comment*" />
 
+
+
+
                 <EditText
                     android:id="@+id/comment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_marginEnd="15dp"
                     android:layout_marginStart="15dp"
+                    android:padding="10dp"
+                    android:gravity="start|top"
                     android:background="@drawable/cdcdcd_white"
-                    android:padding="50dp" />
+
+
+                    />
+
 
                 <LinearLayout
                     android:layout_width="match_parent"

@@ -41,6 +41,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.io.File;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -59,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences pref;
     SharedPreferences.Editor edit;
 
-    ImageView men , round;
+    ImageView men ;
+
+    CircleImageView circle;
 
     private final int PICK_IMAGE_REQUEST = 2;
 
@@ -75,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
         pref = getSharedPreferences("pref" , MODE_PRIVATE);
         edit = pref.edit();
-
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -103,15 +105,13 @@ public class MainActivity extends AppCompatActivity {
 
        // men = (ImageView) findViewById(R.id.user);
 
-
-
         name = (TextView) findViewById(R.id.name);
 
         email = (TextView) findViewById(R.id.email);
 
-        round = (ImageView) findViewById(R.id.round);
+       circle = (CircleImageView) findViewById(R.id.circle);
 
-        round.setOnClickListener(new View.OnClickListener() {
+        circle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -122,8 +122,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
 
 
         proceed = (TextView) findViewById(R.id.proceed);
@@ -140,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         clear = (TextView) findViewById(R.id.clear);
+
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<GetBean> call, Response<GetBean> response) {
 
-
                         bar.setVisibility(View.GONE);
 
                     }
@@ -179,14 +177,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-
-
             }
         });
 
-
         hide = (LinearLayout) findViewById(R.id.hide);
-
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -272,8 +266,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         buck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -343,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     drawer.closeDrawer(GravityCompat.START);
                 }
-                toolbar.setTitle("Services");
+                toolbar.setTitle("");
             }
         });
 
@@ -433,7 +425,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         ImageLoader loader = ImageLoader.getInstance();
-        loader.displayImage(b.image , round);
+        loader.displayImage(b.image , circle);
 
         name.setText(b.name);
         email.setText(b.email);
@@ -448,7 +440,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu , menu);
+        inflater.inflate(R.menu.buckettttt , menu);
         return true;
 
     }
@@ -458,10 +450,14 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        if (id == R.id.cart)
+        if (id == R.id.bucket)
         {
 
+            Intent i = new Intent(MainActivity.this , BucketCart.class);
+            startActivity(i);
+
         }
+
 
 
         return super.onOptionsItemSelected(item);
@@ -482,7 +478,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        toolbar.setTitle("Services");
+        toolbar.setTitle("");
 
 
         bar.setVisibility(View.VISIBLE);
@@ -618,7 +614,7 @@ public class MainActivity extends AppCompatActivity {
                         .cacheOnDisc(true).resetViewBeforeLoading(false).build();
                 ImageLoader loader = ImageLoader.getInstance();
                // loader.displayImage(response.body().getBackgroundImage() , back , options);
-                loader.displayImage(response.body().getData().getImage() , round , options);
+                loader.displayImage(response.body().getData().getImage() , circle , options);
 
                 bar.setVisibility(View.GONE);
 

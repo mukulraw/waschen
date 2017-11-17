@@ -30,7 +30,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ProfileFrag extends Fragment {
 
-    TextView name,mobile,email,address, state , city , zip , country;
+    TextView name,mobile,email,address, state , city , zip , country , birth , land;
 
     ProgressBar bar;
 
@@ -56,6 +56,8 @@ public class ProfileFrag extends Fragment {
         state = (TextView) view.findViewById(R.id.state);
         city = (TextView) view.findViewById(R.id.city);
         country = (TextView) view.findViewById(R.id.country);
+        birth = (TextView) view.findViewById(R.id.birthday);
+        land = (TextView) view.findViewById(R.id.landmark);
         edit = (ImageView)view.findViewById(R.id.edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,6 +120,10 @@ public class ProfileFrag extends Fragment {
                 state.setText(response.body().getData().getState());
                 country.setText(response.body().getData().getCountry());
                 city.setText(response.body().getData().getCity());
+                birth.setText(response.body().getData().getBirthday());
+                land.setText(response.body().getData().getLandmark());
+
+
 
                 bar.setVisibility(View.GONE);
 

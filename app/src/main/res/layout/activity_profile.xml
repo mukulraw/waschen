@@ -143,6 +143,37 @@
         </LinearLayout>
 
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Landmark"
+                android:textColor="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:id="@+id/landmark"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/cdcdcd_white" />
+
+
+        </LinearLayout>
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -257,6 +288,38 @@
 
 
         </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Birthday"
+                android:textColor="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:id="@+id/birthday"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/cdcdcd_white" />
+
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 </LinearLayout>

@@ -54,6 +54,8 @@ public class BucketCart extends AppCompatActivity {
     Context context;
     Dialog dialog;
 
+    int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,16 +96,25 @@ public class BucketCart extends AppCompatActivity {
 
                 if (date1.length()>0)
                 {
-                    Intent i = new Intent(BucketCart.this , Checkout.class);
-                    i.putExtra("total" , total.getText().toString());
-                    i.putExtra("date" , date1);
-                    startActivity(i);
+                    if (count > 0)
+                    {
+
+                        Intent i = new Intent(BucketCart.this , Checkout.class);
+                        i.putExtra("total" , total.getText().toString());
+                        i.putExtra("date" , date1);
+                        startActivity(i);
+                    }
+                    else {
+
+                        Toast.makeText(BucketCart.this, "Bucket is Empty", Toast.LENGTH_SHORT).show();
+                    }
+
+
                 }
                 else
                 {
                     Toast.makeText(BucketCart.this , "Please select a Pickup date" , Toast.LENGTH_SHORT).show();
                 }
-
 
             }
         });
@@ -145,6 +156,7 @@ public class BucketCart extends AppCompatActivity {
                     }
                 });
             }
+
         });
 
 
@@ -177,6 +189,8 @@ public class BucketCart extends AppCompatActivity {
                         adapter.Setgrid(response.body().getData());
                         total.setText(response.body().getTotalPrice());
                         bar.setVisibility(View.GONE);
+
+                        count = 0;
 
                     }
 
@@ -240,6 +254,8 @@ loadData();
             public void onResponse(Call<GetBean> call, Response<GetBean> response) {
 
                 //Toast.makeText(BucketCart.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                count = response.body().getData().size();
 
                 adapter.Setgrid(response.body().getData());
 
@@ -389,8 +405,6 @@ loadData();
                             b.cartid = response.body().getCartid();
 
                            loadData();
-
-
 
 
 

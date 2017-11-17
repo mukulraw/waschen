@@ -47,12 +47,12 @@
 
 
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="30dp"
-                    android:id="@+id/round"
+                    android:id="@+id/circle"
                     android:background="@drawable/men"
                     android:src="@drawable/white_profile"/>
 
@@ -93,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/service"
-            android:text="Service"
+            android:text="Home"
             android:gravity="center_vertical"
             android:textSize="15sp"
             android:drawablePadding="10dp"

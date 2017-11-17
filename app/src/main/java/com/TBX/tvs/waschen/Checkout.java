@@ -17,7 +17,6 @@ public class Checkout extends AppCompatActivity {
     CustomViewPager pager;
     PagerAdapter paadapter;
     TabLayout tabs;
-
     String total;
     String date;
 
@@ -50,18 +49,18 @@ public class Checkout extends AppCompatActivity {
         paadapter = new PagerAdapter(getSupportFragmentManager(), 4);
 
 
-        tabs.addTab(tabs.newTab().setText("PickUp").setIcon(R.drawable.one));
-        tabs.addTab(tabs.newTab().setText("Drop").setIcon(R.drawable.two));
-        tabs.addTab(tabs.newTab().setText("Payment").setIcon(R.drawable.three));
-        tabs.addTab(tabs.newTab().setText("Done").setIcon(R.drawable.chaar));
+        tabs.addTab(tabs.newTab().setText("PickUp"));
+        tabs.addTab(tabs.newTab().setText("Drop"));
+        tabs.addTab(tabs.newTab().setText("Payment"));
+        tabs.addTab(tabs.newTab().setText("Done"));
 
         pager.setAdapter(paadapter);
         tabs.setupWithViewPager(pager);
 
-        tabs.getTabAt(0).setText("PickUp").setIcon(R.drawable.one);
-        tabs.getTabAt(1).setText("Drop").setIcon(R.drawable.two);
-        tabs.getTabAt(2).setText("Payment").setIcon(R.drawable.three);
-        tabs.getTabAt(3).setText("Done").setIcon(R.drawable.chaar);
+        tabs.getTabAt(0).setText("PickUp");
+        tabs.getTabAt(1).setText("Drop");
+        tabs.getTabAt(2).setText("Payment");
+        tabs.getTabAt(3).setText("Done");
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

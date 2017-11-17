@@ -109,8 +109,6 @@ public class BucketFragment extends Fragment {
 
                 adapter.setgrid(response.body().getData());
 
-
-
                 bar.setVisibility(View.GONE);
 
             }

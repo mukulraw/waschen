@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 
 import com.TBX.tvs.waschen.LoginPOJO.LoginBean;
+import com.TBX.tvs.waschen.NudgePOJO.NudgeBean;
 import com.TBX.tvs.waschen.ServicesPOJO.Datum;
 import com.TBX.tvs.waschen.ServicesPOJO.ServiceBean;
 
@@ -102,13 +103,50 @@ public class Home extends Fragment {
             public void onClick(View view) {
 
 
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                bar.setVisibility(View.VISIBLE);
+
+
+                Bean b = (Bean)getContext().getApplicationContext();
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(b.baseURL)
+                        .addConverterFactory(ScalarsConverterFactory.create())
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+
+                allAPIs cr = retrofit.create(allAPIs.class);
+                Call<NudgeBean> call = cr.nudge(b.email , b.name);
+                call.enqueue(new Callback<NudgeBean>() {
+                    @Override
+                    public void onResponse(Call<NudgeBean> call, Response<NudgeBean> response) {
+
+
+                        Toast.makeText(getContext(),"Sent Successfully", Toast.LENGTH_SHORT).show();
+
+                        bar.setVisibility(View.GONE);
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<NudgeBean> call, Throwable t) {
+
+
+                        bar.setVisibility(View.GONE);
+                    }
+                });
+
+
+
+
+
+
+               /* FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction ft = fragmentManager.beginTransaction();
                 ContactFrag fragment = new ContactFrag();
                 ft.replace(R.id.replace, fragment);
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
                 ft.addToBackStack(null);
-                ft.commit();
+                ft.commit();*/
 
 
             }
@@ -129,7 +167,6 @@ public class Home extends Fragment {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        toolbar.setTitle("Services");
 
     }
 

@@ -89,8 +89,6 @@
                         android:padding="5dp" />
                 </LinearLayout>-->
 
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -137,6 +135,34 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"/>
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Birthday"
+                android:padding="2dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_kam_stroke"
+                android:padding="5dp"
+                android:id="@+id/birthday"
+                android:hint="Birthday"
+                android:inputType="text"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"/>
+
+
+
+
+
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -158,6 +184,31 @@
                 android:inputType="text"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Landmark"
+                android:padding="2dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_kam_stroke"
+                android:padding="5dp"
+                android:id="@+id/landmark"
+                android:hint="landmark"
+                android:inputType="text"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"/>
+
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -247,6 +298,7 @@
                         android:background="@drawable/black_kam_stroke"
                         android:padding="5dp"/>
                 </LinearLayout>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
