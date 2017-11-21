@@ -398,6 +398,11 @@ facebbok.setOnClickListener(new View.OnClickListener() {
 
                                     bar.setVisibility(View.GONE);
                                 }
+                                else
+                                {
+                                    Toast.makeText(SignIn.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                    bar.setVisibility(View.GONE);
+                                }
 
                                 Log.d("dfjsdg" , response.body().getMessage());
 

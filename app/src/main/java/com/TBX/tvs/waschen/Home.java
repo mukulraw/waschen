@@ -167,6 +167,8 @@ public class Home extends Fragment {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+        toolbar.setTitle("");
+
 
     }
 
