@@ -18,7 +18,7 @@ public class Datum {
     @SerializedName("quantity")
     @Expose
     private String quantity;
-    @SerializedName("unit price")
+    @SerializedName("unit_price")
     @Expose
     private String unitPrice;
     @SerializedName("totalPrice")
@@ -75,6 +75,4 @@ public class Datum {
     public void setImage(String image) {
         this.image = image;
     }
-
-
 }

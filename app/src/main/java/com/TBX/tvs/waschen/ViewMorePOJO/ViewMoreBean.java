@@ -26,10 +26,10 @@ public class ViewMoreBean {
     @SerializedName("orderId")
     @Expose
     private String orderId;
-    @SerializedName("placed date")
+    @SerializedName("placed_date")
     @Expose
     private String placedDate;
-    @SerializedName("total items")
+    @SerializedName("total_items")
     @Expose
     private String totalItems;
     @SerializedName("address")
@@ -38,10 +38,10 @@ public class ViewMoreBean {
     @SerializedName("zip")
     @Expose
     private String zip;
-    @SerializedName("order status")
+    @SerializedName("order_status")
     @Expose
     private String orderStatus;
-    @SerializedName("order status1")
+    @SerializedName("order_status1")
     @Expose
     private String orderStatus1;
     @SerializedName("trackingStatus")
@@ -154,8 +154,6 @@ public class ViewMoreBean {
     public void setData(List<Datum> data) {
         this.data = data;
     }
-
-
 
 
 }

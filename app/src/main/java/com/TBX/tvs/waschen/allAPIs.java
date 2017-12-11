@@ -2,6 +2,7 @@ package com.TBX.tvs.waschen;
 
 import com.TBX.tvs.waschen.AddBucketPOJO.AddBean;
 import com.TBX.tvs.waschen.BucketCountPOJO.BucketCountBean;
+import com.TBX.tvs.waschen.CancelPOJO.CancelBean;
 import com.TBX.tvs.waschen.CashPOJO.CashBean;
 import com.TBX.tvs.waschen.CheckoutPOJO.CheckBean;
 import com.TBX.tvs.waschen.ClearPOJO.ClearBean;
@@ -300,6 +301,15 @@ public interface allAPIs {
 
     );
 
+
+
+    @Multipart
+    @POST("waschen_api/cancel_order.php")
+    Call<CancelBean> cancel (
+            @Part("userId") String c,
+            @Part("orderId") String u
+
+    );
 
 
 

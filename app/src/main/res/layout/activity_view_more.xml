@@ -134,7 +134,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="2">
+            android:layout_weight="1.5">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -156,7 +156,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/date"
+                android:id="@+id/pending"
                 android:text="Pending"
                 android:textColor="#000"
                 android:textStyle="bold"
@@ -237,11 +237,31 @@
 
 <android.support.v7.widget.RecyclerView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/grid">
 </android.support.v7.widget.RecyclerView>
 
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/black_strokee"
+            android:layout_alignParentBottom="true"
+            android:gravity="end"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#fff"
+            android:text="Cancel Order"
+            android:id="@+id/cancel"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:layout_gravity="end"/>
+
+
+    </LinearLayout>
     </LinearLayout>
 
         <ProgressBar
@@ -250,6 +270,8 @@
             android:id="@+id/progress"
             android:layout_centerInParent="true"
             android:visibility="gone"/>
+
+
 
 
     </RelativeLayout>
